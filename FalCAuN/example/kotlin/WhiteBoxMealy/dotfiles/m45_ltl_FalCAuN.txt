@@ -1,0 +1,1 @@
+(([] ! input == ai2ce4) || (! input == ai2ce4 U (input == ai2ce4 && ([] (! (output == ni1ne1ai2re1 && X (<> output == usr2ai3ce1))) || (! output == ni1ne1ai2re1 U output == usr2ai2ce2)))))

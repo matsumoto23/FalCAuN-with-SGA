@@ -1,0 +1,152 @@
+package net.maswag.falcaun;
+
+import lombok.Getter;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+/**
+ * <p>The class representing the OR operator of temporal logic.</p>
+ *
+ * @author Masaki Waga {@literal <masakiwaga@gmail.com>}
+ * @param <I> Type of the input at each step
+ */
+@Getter
+public class TemporalOr<I> extends AbstractTemporalLogic<I> {
+    private final List<TemporalLogic<I>> subFmls;
+
+    TemporalOr(TemporalLogic<I> subFml1, TemporalLogic<I> subFml2) {
+        this.subFmls = Arrays.asList(subFml1, subFml2);
+        this.nonTemporal = subFml1.isNonTemporal() && subFml2.isNonTemporal();
+        this.iOType = subFml1.getIOType().merge(subFml2.getIOType());
+        this.initialized = subFml1.isInitialized() && subFml2.isInitialized();
+    }
+
+    TemporalOr(List<TemporalLogic<I>> subFmls) {
+        this.subFmls = subFmls;
+        this.nonTemporal = subFmls.stream().map(TemporalLogic::isNonTemporal).reduce((a, b) -> a && b).orElse(false);
+        this.iOType = subFmls.stream().map(TemporalLogic::getIOType).reduce(TemporalLogic.IOType::merge).orElse(null);
+        this.initialized = subFmls.stream().map(TemporalLogic::isInitialized).reduce((a, b) -> a && b).orElse(false);
+    }
+
+
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public RoSI getRoSI(IOSignal<I> signal) {
+        return subFmls.stream().map(subFml -> subFml.getRoSI(signal)).filter(
+                Objects::nonNull).reduce(new RoSI(Double.NEGATIVE_INFINITY, Double.NEGATIVE_INFINITY), RoSI::max);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String toString() {
+        return subFmls.stream().map(TemporalLogic<I>::toString).collect(Collectors.joining(" || "));
+    }
+
+    public String toOwlString(){
+        return this.subFmls.stream().map(TemporalLogic<I>::toOwlString).map(
+                    s -> "( " + s + " )").collect(Collectors.joining(" | "));
+    }
+    
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void constructSatisfyingAtomicPropositions() {
+        super.constructSatisfyingAtomicPropositions();
+        if (this.nonTemporal) {
+            this.satisfyingAtomicPropositions = new HashSet<>();
+            for (TemporalLogic<I> subFml : subFmls) {
+                this.satisfyingAtomicPropositions.addAll(
+                        Objects.requireNonNull(subFml.getSatisfyingAtomicPropositions()));
+            }
+        } else {
+            this.satisfyingAtomicPropositions = null;
+        }
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public Set<String> getAllAPs() {
+        return subFmls.get(0).getAllAPs();
+    }
+
+    /** {@inheritDoc} */
+    @Override
+    public String toAbstractString() {
+        if (nonTemporal && this.iOType != IOType.BOTH) {
+            return makeAbstractStringWithAtomicStrings();
+        } else {
+            return this.subFmls.stream().map(TemporalLogic::toAbstractString).map(
+                    s -> "( " + s + " )").collect(Collectors.joining(" || "));
+        }
+    }
+
+    @Override
+    public String toAbstractString(OutputEquivalence mapper) {
+        if (nonTemporal && this.iOType != IOType.BOTH) {
+            return makeAbstractStringWithAtomicStrings(mapper);
+        } else {
+            return this.subFmls.stream().map(TemporalLogic::toAbstractString).map(
+                    s -> "( " + s + " )").collect(Collectors.joining(" || "));
+        }
+    }
+
+    /**
+     * <p>getSubFmls.</p>
+     *
+     * @return {@link TemporalLogic<I>} list object.
+     */
+    public List<TemporalLogic<I>> getSubFmls() { return this.subFmls; }
+
+    public TemporalLogic<I> derivativeOn(String a){
+        TemporalLogic<I> res = new TemporalOr<I>(subFmls.stream().map(f -> f.derivativeOn(a)).collect(Collectors.toList()));
+        return res;
+    }
+
+    public TemporalLogic<I> toNnf(boolean negate){
+        if (negate){
+            return new TemporalAnd<I>(subFmls.stream().map(f -> f.toNnf(negate)).collect(Collectors.toList()));
+        } else {
+            return new TemporalOr<I>(subFmls.stream().map(f -> f.toNnf(negate)).collect(Collectors.toList()));
+        }
+    }
+
+    public TemporalLogic<I> toDisjunctiveForm(){
+        List<TemporalLogic<I>> convertedSubFmls = subFmls.stream().map(f -> f.toDisjunctiveForm()).collect(Collectors.toList());
+        List<TemporalLogic<I>> newList = new ArrayList<>();
+        for (TemporalLogic<I> formula: convertedSubFmls){
+            if (formula instanceof TemporalOr<?>){
+                newList.addAll(((TemporalOr<I>)formula).getSubFmls());
+            } else {
+                newList.add(formula);
+            }
+        }
+        return new TemporalOr<I>(newList);
+    }
+
+    public List<TemporalLogic<I>> getAllConjunctions(){
+        List<TemporalLogic<I>> result = new ArrayList<>(subFmls);
+        for (TemporalLogic<I> subFml: subFmls){
+            result.addAll(subFml.getAllConjunctions());
+        }
+        return result;
+    }
+
+    static class STLOr extends TemporalOr<List<Double>> implements STLCost {
+        STLOr(STLCost subFml1, STLCost subFml2) {
+            super(subFml1, subFml2);
+        }
+    }
+
+    static class LTLOr extends TemporalOr<String> implements LTLFormula {
+        LTLOr(TemporalLogic<String> subFml1, TemporalLogic<String> subFml2) {
+            super(subFml1, subFml2);
+        }
+    }
+}

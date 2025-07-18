@@ -1,0 +1,1 @@
+matlab nosplash -nodesktop -r 'addpath ~/MATLAB/Examples/R2024a/simulink_automotive/ModelingAnAutomaticTransmissionControllerExample; openExample('ModelingAnAutomaticTransmissionControllerExample')'

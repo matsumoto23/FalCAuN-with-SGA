@@ -1,0 +1,6 @@
+([] (! input == usr9ai1VoidReply || (<> output == ai2VoidReply)))
+([] (! (input == ai3ce10 && (<> input == usr6ai1VoidReply)) || (! output == usr3ai1ce2 U (input == usr6ai1VoidReply || ((output == usr5ai1ce4 && ! output == usr3ai1ce2) && X (! output == usr3ai1ce2 U output == usr9ai1ce1))))))
+([] (! (input == ai2ce7 && (<> input == ai3ce21)) || ((input == usr7ai1re15 && (! X (! input == ai3ce21 U input == usr1ai3re40) || X (! input == ai3ce21 U (input == usr1ai3re40 && (<> output == usr6ai1ce6))))) U input == ai3ce21)))
+([] (! output == ai1re10) || ((input == ai4ce13 && (! X (! output == ai1re10 U input == usr1ai3re41) || X (! output == ai1re10 U (input == usr1ai3re41 && (<> output == ai1re12))))) U output == ai1re10))
+([] (! input == ai2ce24 || (<> output == usr3ai1ce1)))
+([] (! output == usr7ai1ce3 || ((! ((output == usr5ai1ce3 && ! input == ai3ce19) && X (! input == ai3ce19 U (output == ai3re10 && ! input == ai3ce19))) U (input == ai3ce19 || input == usr6ai1VoidReply)) || ([] ! (output == usr5ai1ce3 && X (<> output == ai3re10))))))

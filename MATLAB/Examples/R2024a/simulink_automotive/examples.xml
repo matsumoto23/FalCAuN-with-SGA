@@ -1,0 +1,226 @@
+<?xml version="1.0"?>
+<demos>
+  <demoitem>
+    <source>BuildingAClutchLockUpModelExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/BuildingAClutchLockUpModelExample.html</file>
+    <metadata>ex02604571</metadata>
+    <hideCode/>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="repository/simulink" open="open" timestamp="1678788806">sldemo_clutch.slx</file>
+    <file component="simulink_automotive" timestamp="1678788806">sldemo_clutch_figure1.png</file>
+    <file component="simulink_automotive" timestamp="1678788806">sldemo_clutch_figure2.png</file>
+    <file component="repository/simulink" timestamp="1586460307">sldemo_clutchplot.m</file>
+    <file component="repository/simulink" timestamp="1586883140">sldemo_clutchparam.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>SimulatingAutomaticClimateControlSystemsExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/SimulatingAutomaticClimateControlSystemsExample.html</file>
+    <metadata>ex08128433</metadata>
+    <thumbnail>html/SimulatingAutomaticClimateControlSystemsExample_01.png</thumbnail>
+    <hideCode/>
+    <product>simulink</product>
+    <product>stateflow</product>
+    <file component="repository/simulink" open="open" timestamp="1636967045">sldemo_auto_climatecontrol.slx</file>
+    <file component="simulink_automotive" timestamp="1603924497">therm_display_sdi.png</file>
+  </demoitem>
+  <demoitem>
+    <source>AutomotiveSuspensionExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/AutomotiveSuspensionExample.html</file>
+    <metadata>ex10078822</metadata>
+    <hideCode/>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_automotive" timestamp="1620206058" open="open">sldemo_suspn.slx</file>
+    <file component="simulink_automotive" timestamp="1591280014">sldemo_suspn_figure1.png</file>
+    <file component="simulink_automotive" timestamp="1585832025">sldemo_suspdat.m</file>
+    <file component="simulink_automotive" timestamp="1585832025">sldemo_suspgraph.m</file>
+    <file component="simulink_automotive" timestamp="1591280014">sldemo_suspn_figure1.pptx</file>
+  </demoitem>
+  <demoitem>
+    <source>ModelingClutchLockUpUsingIfBlocksExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/ModelingClutchLockUpUsingIfBlocksExample.html</file>
+    <metadata>ex19709730</metadata>
+    <hideCode/>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="repository/simulink" timestamp="1594421514" open="open">sldemo_clutch_if.slx</file>
+    <file component="simulink_automotive" timestamp="1594421514">sldemo_clutch_if_figure1.png</file>
+    <file component="repository/simulink" timestamp="1586460507">sldemo_clutchplot_if.m</file>
+    <file component="repository/simulink" timestamp="1586883140">sldemo_clutchparam.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>UseDDForFuelContSysExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/UseDDForFuelContSysExample.html</file>
+    <metadata>ex36954606</metadata>
+    <hideCode/>
+    <product>matlab</product>
+    <product>simulink</product>
+    <product>stateflow</product>
+    <file component="repository/simulink" open="open" timestamp="1639752348">sldemo_fuelsys_dd.slx</file>
+    <file component="repository/simulink" timestamp="1639752348">sldemo_fuelsys_dd_types.sldd</file>
+    <file component="repository/simulink" timestamp="1639752348">sldemo_fuelsys_dd_types_float.sldd</file>
+    <file component="repository/simulink" timestamp="1639752348">sldemo_fuelsys_dd.sldd</file>
+    <file component="repository/simulink" timestamp="1639752348">sldemo_fuelsys_dd_plant.slx</file>
+    <file component="repository/simulink" timestamp="1639752348">sldemo_fuelsys.slx</file>
+    <file component="repository/simulink" timestamp="1639752348">sldemo_fuelsys_dd_plant.sldd</file>
+    <file component="repository/simulink" timestamp="1639752348">sldemo_fuelsys_dd_controller.sldd</file>
+    <file component="repository/simulink" timestamp="1639752348">sldemo_fuelsys_dd_controller.slx</file>
+    <file component="repository/simulink" timestamp="1588172262">sld_FuelModes.m</file>
+  </demoitem>
+  <demoitem>
+    <source>EngineTimingModelWithClosedLoopControlExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/EngineTimingModelWithClosedLoopControlExample.html</file>
+    <metadata>ex45165242</metadata>
+    <hideCode/>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_automotive" timestamp="1585256810" open="open">sldemo_enginewc.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>PowerAnalysisOfSystemExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex45882199</metadata>
+    <product>matlab</product>
+    <product>autoblks</product>
+    <file component="simulink_automotive" timestamp="1642695663">powerAnalysis.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>ModelingEngineTimingUsingTriggeredSubsystemsExample</source>
+    <type>model</type>
+    <extension>mlx</extension>
+    <metadata>ex58822488</metadata>
+    <thumbnail>html/ModelingEngineTimingUsingTriggeredSubsystemsExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_automotive" open="open" timestamp="1703687502">sldemo_engine.slx</file>
+    <file component="simulink_automotive" timestamp="1702665795">IntakeManifoldSubsystem.png</file>
+    <file component="simulink_automotive" timestamp="1703679945">ModelingEngineTimingUsingTriggeredSubsystemsExample.png</file>
+    <file component="simulink_automotive" timestamp="1702665795">ThrottleSubsystem.png</file>
+    <file component="simulink_automotive" timestamp="1702665795">ThrottleandManifold.png</file>
+    <file component="simulink_automotive" timestamp="1702665795">CompressionSubsystem.png</file>
+    <file component="simulink_automotive" timestamp="1702665795">ValveTimingSubsystem.png</file>
+    <file component="simulink_automotive" timestamp="1702915634">CombustionandTorque.png</file>
+    <file component="simulink_automotive" timestamp="1702915634">EngineDynamics.png</file>
+  </demoitem>
+  <demoitem>
+    <source>AnalyzeDataFromMultipleSimulationsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex64560958</metadata>
+    <product>matlab</product>
+    <file component="repository/simulink" timestamp="1666087970">sldemo_autotrans.slx</file>
+    <file component="repository/simulink" timestamp="1666087970">sldemo_autotrans_data.mat</file>
+    <file component="repository/simulink" timestamp="1572455215">sldemo_autotrans_notes.mldatx</file>
+    <file component="repository/simulink" timestamp="1666087970">VehicleManeuvers.mat</file>
+    <file component="simulink_automotive" timestamp="1666087970">RPMTorqueVehicleSpeed.mldatx</file>
+    <file component="simulink_automotive" timestamp="1666087970">ThrottleBrakeVehicleSpeed.mldatx</file>
+  </demoitem>
+  <demoitem>
+    <source>ModelingAFaultTolerantFuelControlSystemExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/ModelingAFaultTolerantFuelControlSystemExample.html</file>
+    <metadata>ex73747157</metadata>
+    <thumbnail>html/ModelingAFaultTolerantFuelControlSystemExample_02.png</thumbnail>
+    <hideCode/>
+    <product>matlab</product>
+    <product>stateflow</product>
+    <product>simulink</product>
+    <file component="repository/simulink" open="open" timestamp="1705662106">sldemo_fuelsys.slx</file>
+    <file component="repository/simulink" timestamp="1705662106">sldemo_fuelsys_data.m</file>
+    <file component="repository/simulink" timestamp="1705662106">sld_FuelModes.m</file>
+  </demoitem>
+  <demoitem>
+    <source>ModelingAnAutomaticTransmissionControllerExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/ModelingAnAutomaticTransmissionControllerExample.html</file>
+    <metadata>ex74152702</metadata>
+    <hideCode/>
+    <product>simulink</product>
+    <product>stateflow</product>
+    <file component="repository/simulink" open="open" timestamp="1669897201">sldemo_autotrans.slx</file>
+    <file component="simulink_automotive" timestamp="1592832563">sldemo_autotrans_figure1.png</file>
+    <file component="simulink_automotive" timestamp="1582290870">sldemo_autotrans_figure2.png</file>
+    <file component="repository/simulink" timestamp="1586489129">sldemo_autotrans_data.mat</file>
+    <file component="simulink_automotive" timestamp="1592832563">sldemo_autotrans_figure1.ppt</file>
+    <file component="repository/simulink" timestamp="1623186048">VehicleManeuvers.mat</file>
+    <file component="simulink_automotive" timestamp="1641492554">sldemo_autotrans_design_study.mldatx</file>
+    <file component="repository/simulink" timestamp="1572455215">sldemo_autotrans_notes.mldatx</file>
+  </demoitem>
+  <demoitem>
+    <source>VehicleElectricalSystemExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/VehicleElectricalSystemExample.html</file>
+    <metadata>ex75658215</metadata>
+    <hideCode/>
+    <product>simscapeelectrical</product>
+    <product>simulink</product>
+    <file component="simulink_automotive" open="open" timestamp="1608059864">sldemo_auto_carelec.slx</file>
+    <file component="simulink_automotive" timestamp="1586488821">sldemo_auto_carelec_data.mat</file>
+  </demoitem>
+  <demoitem>
+    <source>PowerWindowControlProjectExample</source>
+    <project cmSystem="" component="simulink_automotive" open="open" type="main">powerwindow</project>
+    <type>project</type>
+    <extension>m</extension>
+    <file>html/PowerWindowControlProjectExample.html</file>
+    <metadata>ex76371363</metadata>
+    <thumbnail>data/slexPowerWindowProjectPix.png</thumbnail>
+    <product>matlab</product>
+    <product>simulink</product>
+    <product>slcoverage</product>
+    <product>dsp</product>
+    <product>simscapemultibody</product>
+    <product>fixedpoint</product>
+    <product>simscapeelectrical</product>
+    <product>simscape</product>
+    <product>slrt</product>
+    <product>stateflow</product>
+    <product>sl3d</product>
+    <file component="simulink_automotive" timestamp="1586344180">slexPowerWindowWindowPix.jpg</file>
+    <file component="simulink_automotive" timestamp="1591736062">slexPowerWindowProjectPix.png</file>
+  </demoitem>
+  <demoitem>
+    <source>VehicleElectricalAndClimateControlSystemsExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/VehicleElectricalAndClimateControlSystemsExample.html</file>
+    <metadata>ex85885438</metadata>
+    <hideCode/>
+    <product>simscapeelectrical</product>
+    <product>stateflow</product>
+    <product>simulink</product>
+    <file component="simulink_automotive" open="open" timestamp="1684770153">sldemo_auto_climate_elec.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>ModelingAnAntiLockBrakingSystemExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/ModelingAnAntiLockBrakingSystemExample.html</file>
+    <metadata>ex94876756</metadata>
+    <thumbnail>html/ModelingAnAntiLockBrakingSystemExample_01.png</thumbnail>
+    <hideCode/>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="repository/simulink" open="open" timestamp="1690188459">sldemo_absbrake.slx</file>
+    <file component="repository/simulink" timestamp="1690188459">sldemo_wheelspeed_absbrake.slx</file>
+    <file component="simulink_automotive" timestamp="1679306306">sldemo_absbrakeplots.m</file>
+    <file component="repository/simulink" timestamp="1679306306">sldemo_absdata.m</file>
+  </demoitem>
+</demos>

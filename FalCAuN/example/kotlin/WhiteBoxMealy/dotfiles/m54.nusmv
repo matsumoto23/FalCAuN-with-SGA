@@ -1,0 +1,674 @@
+MODULE main
+VAR
+    state : { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26 };
+    input : { ai1_ce1, ai1_ce2, usr1_ai1_VoidReply, usr2_ai1_VoidReply, usr1_ni1_ne1, usr1_ni1_ne2, usr1_ni1_ne3, usr1_ni1_ne4, usr1_ni1_ne5, usr1_ni1_ne6, null };
+    output : { usr1_ai1_ce1, usr1_ai1_ce2, error, usr2_ai1_ce1, ai1_VoidReply, none, ni1_ne1, ni1_ne3, ni1_ne5, ni1_ne1__ai1_VoidReply, ni1_ne3__ai1_VoidReply, ni1_ne5__ai1_VoidReply, ni1_ne2, ni1_ne4, ni1_ne6, ni1_ne2__ai1_VoidReply, ni1_ne4__ai1_VoidReply, ni1_ne6__ai1_VoidReply, null };
+ASSIGN
+    init(state) := 0;
+    init(input) := null;
+    init(output) := usr1_ai1_ce1;
+    next(state) := case
+                    state = 0 & input = ai1_ce1 : 1;
+                    state = 0 & input = ai1_ce2 : 2;
+                    state = 0 & input = usr1_ai1_VoidReply : 3;
+                    state = 0 & input = usr2_ai1_VoidReply : 3;
+                    state = 0 & input = usr1_ni1_ne1 : 4;
+                    state = 0 & input = usr1_ni1_ne2 : 4;
+                    state = 0 & input = usr1_ni1_ne3 : 4;
+                    state = 0 & input = usr1_ni1_ne4 : 4;
+                    state = 0 & input = usr1_ni1_ne5 : 4;
+                    state = 0 & input = usr1_ni1_ne6 : 4;
+                    state = 1 & input = ai1_ce1 : 3;
+                    state = 1 & input = ai1_ce2 : 3;
+                    state = 1 & input = usr1_ai1_VoidReply : 5;
+                    state = 1 & input = usr2_ai1_VoidReply : 3;
+                    state = 1 & input = usr1_ni1_ne1 : 6;
+                    state = 1 & input = usr1_ni1_ne2 : 7;
+                    state = 1 & input = usr1_ni1_ne3 : 8;
+                    state = 1 & input = usr1_ni1_ne4 : 7;
+                    state = 1 & input = usr1_ni1_ne5 : 9;
+                    state = 1 & input = usr1_ni1_ne6 : 7;
+                    state = 2 & input = ai1_ce1 : 3;
+                    state = 2 & input = ai1_ce2 : 3;
+                    state = 2 & input = usr1_ai1_VoidReply : 10;
+                    state = 2 & input = usr2_ai1_VoidReply : 3;
+                    state = 2 & input = usr1_ni1_ne1 : 11;
+                    state = 2 & input = usr1_ni1_ne2 : 12;
+                    state = 2 & input = usr1_ni1_ne3 : 11;
+                    state = 2 & input = usr1_ni1_ne4 : 13;
+                    state = 2 & input = usr1_ni1_ne5 : 11;
+                    state = 2 & input = usr1_ni1_ne6 : 14;
+                    state = 3 & input = ai1_ce1 : 3;
+                    state = 3 & input = ai1_ce2 : 3;
+                    state = 3 & input = usr1_ai1_VoidReply : 3;
+                    state = 3 & input = usr2_ai1_VoidReply : 3;
+                    state = 3 & input = usr1_ni1_ne1 : 3;
+                    state = 3 & input = usr1_ni1_ne2 : 3;
+                    state = 3 & input = usr1_ni1_ne3 : 3;
+                    state = 3 & input = usr1_ni1_ne4 : 3;
+                    state = 3 & input = usr1_ni1_ne5 : 3;
+                    state = 3 & input = usr1_ni1_ne6 : 3;
+                    state = 4 & input = ai1_ce1 : 3;
+                    state = 4 & input = ai1_ce2 : 3;
+                    state = 4 & input = usr1_ai1_VoidReply : 3;
+                    state = 4 & input = usr2_ai1_VoidReply : 0;
+                    state = 4 & input = usr1_ni1_ne1 : 3;
+                    state = 4 & input = usr1_ni1_ne2 : 3;
+                    state = 4 & input = usr1_ni1_ne3 : 3;
+                    state = 4 & input = usr1_ni1_ne4 : 3;
+                    state = 4 & input = usr1_ni1_ne5 : 3;
+                    state = 4 & input = usr1_ni1_ne6 : 3;
+                    state = 5 & input = ai1_ce1 : 3;
+                    state = 5 & input = ai1_ce2 : 15;
+                    state = 5 & input = usr1_ai1_VoidReply : 3;
+                    state = 5 & input = usr2_ai1_VoidReply : 3;
+                    state = 5 & input = usr1_ni1_ne1 : 0;
+                    state = 5 & input = usr1_ni1_ne2 : 16;
+                    state = 5 & input = usr1_ni1_ne3 : 0;
+                    state = 5 & input = usr1_ni1_ne4 : 16;
+                    state = 5 & input = usr1_ni1_ne5 : 0;
+                    state = 5 & input = usr1_ni1_ne6 : 16;
+                    state = 6 & input = ai1_ce1 : 3;
+                    state = 6 & input = ai1_ce2 : 3;
+                    state = 6 & input = usr1_ai1_VoidReply : 0;
+                    state = 6 & input = usr2_ai1_VoidReply : 3;
+                    state = 6 & input = usr1_ni1_ne1 : 3;
+                    state = 6 & input = usr1_ni1_ne2 : 3;
+                    state = 6 & input = usr1_ni1_ne3 : 3;
+                    state = 6 & input = usr1_ni1_ne4 : 3;
+                    state = 6 & input = usr1_ni1_ne5 : 3;
+                    state = 6 & input = usr1_ni1_ne6 : 3;
+                    state = 7 & input = ai1_ce1 : 3;
+                    state = 7 & input = ai1_ce2 : 3;
+                    state = 7 & input = usr1_ai1_VoidReply : 17;
+                    state = 7 & input = usr2_ai1_VoidReply : 3;
+                    state = 7 & input = usr1_ni1_ne1 : 3;
+                    state = 7 & input = usr1_ni1_ne2 : 3;
+                    state = 7 & input = usr1_ni1_ne3 : 3;
+                    state = 7 & input = usr1_ni1_ne4 : 3;
+                    state = 7 & input = usr1_ni1_ne5 : 3;
+                    state = 7 & input = usr1_ni1_ne6 : 3;
+                    state = 8 & input = ai1_ce1 : 3;
+                    state = 8 & input = ai1_ce2 : 3;
+                    state = 8 & input = usr1_ai1_VoidReply : 0;
+                    state = 8 & input = usr2_ai1_VoidReply : 3;
+                    state = 8 & input = usr1_ni1_ne1 : 3;
+                    state = 8 & input = usr1_ni1_ne2 : 3;
+                    state = 8 & input = usr1_ni1_ne3 : 3;
+                    state = 8 & input = usr1_ni1_ne4 : 3;
+                    state = 8 & input = usr1_ni1_ne5 : 3;
+                    state = 8 & input = usr1_ni1_ne6 : 3;
+                    state = 9 & input = ai1_ce1 : 3;
+                    state = 9 & input = ai1_ce2 : 3;
+                    state = 9 & input = usr1_ai1_VoidReply : 0;
+                    state = 9 & input = usr2_ai1_VoidReply : 3;
+                    state = 9 & input = usr1_ni1_ne1 : 3;
+                    state = 9 & input = usr1_ni1_ne2 : 3;
+                    state = 9 & input = usr1_ni1_ne3 : 3;
+                    state = 9 & input = usr1_ni1_ne4 : 3;
+                    state = 9 & input = usr1_ni1_ne5 : 3;
+                    state = 9 & input = usr1_ni1_ne6 : 3;
+                    state = 10 & input = ai1_ce1 : 15;
+                    state = 10 & input = ai1_ce2 : 3;
+                    state = 10 & input = usr1_ai1_VoidReply : 3;
+                    state = 10 & input = usr2_ai1_VoidReply : 3;
+                    state = 10 & input = usr1_ni1_ne1 : 18;
+                    state = 10 & input = usr1_ni1_ne2 : 0;
+                    state = 10 & input = usr1_ni1_ne3 : 18;
+                    state = 10 & input = usr1_ni1_ne4 : 0;
+                    state = 10 & input = usr1_ni1_ne5 : 18;
+                    state = 10 & input = usr1_ni1_ne6 : 0;
+                    state = 11 & input = ai1_ce1 : 3;
+                    state = 11 & input = ai1_ce2 : 3;
+                    state = 11 & input = usr1_ai1_VoidReply : 19;
+                    state = 11 & input = usr2_ai1_VoidReply : 3;
+                    state = 11 & input = usr1_ni1_ne1 : 3;
+                    state = 11 & input = usr1_ni1_ne2 : 3;
+                    state = 11 & input = usr1_ni1_ne3 : 3;
+                    state = 11 & input = usr1_ni1_ne4 : 3;
+                    state = 11 & input = usr1_ni1_ne5 : 3;
+                    state = 11 & input = usr1_ni1_ne6 : 3;
+                    state = 12 & input = ai1_ce1 : 3;
+                    state = 12 & input = ai1_ce2 : 3;
+                    state = 12 & input = usr1_ai1_VoidReply : 0;
+                    state = 12 & input = usr2_ai1_VoidReply : 3;
+                    state = 12 & input = usr1_ni1_ne1 : 3;
+                    state = 12 & input = usr1_ni1_ne2 : 3;
+                    state = 12 & input = usr1_ni1_ne3 : 3;
+                    state = 12 & input = usr1_ni1_ne4 : 3;
+                    state = 12 & input = usr1_ni1_ne5 : 3;
+                    state = 12 & input = usr1_ni1_ne6 : 3;
+                    state = 13 & input = ai1_ce1 : 3;
+                    state = 13 & input = ai1_ce2 : 3;
+                    state = 13 & input = usr1_ai1_VoidReply : 0;
+                    state = 13 & input = usr2_ai1_VoidReply : 3;
+                    state = 13 & input = usr1_ni1_ne1 : 3;
+                    state = 13 & input = usr1_ni1_ne2 : 3;
+                    state = 13 & input = usr1_ni1_ne3 : 3;
+                    state = 13 & input = usr1_ni1_ne4 : 3;
+                    state = 13 & input = usr1_ni1_ne5 : 3;
+                    state = 13 & input = usr1_ni1_ne6 : 3;
+                    state = 14 & input = ai1_ce1 : 3;
+                    state = 14 & input = ai1_ce2 : 3;
+                    state = 14 & input = usr1_ai1_VoidReply : 0;
+                    state = 14 & input = usr2_ai1_VoidReply : 3;
+                    state = 14 & input = usr1_ni1_ne1 : 3;
+                    state = 14 & input = usr1_ni1_ne2 : 3;
+                    state = 14 & input = usr1_ni1_ne3 : 3;
+                    state = 14 & input = usr1_ni1_ne4 : 3;
+                    state = 14 & input = usr1_ni1_ne5 : 3;
+                    state = 14 & input = usr1_ni1_ne6 : 3;
+                    state = 15 & input = ai1_ce1 : 3;
+                    state = 15 & input = ai1_ce2 : 3;
+                    state = 15 & input = usr1_ai1_VoidReply : 20;
+                    state = 15 & input = usr2_ai1_VoidReply : 3;
+                    state = 15 & input = usr1_ni1_ne1 : 21;
+                    state = 15 & input = usr1_ni1_ne2 : 22;
+                    state = 15 & input = usr1_ni1_ne3 : 23;
+                    state = 15 & input = usr1_ni1_ne4 : 24;
+                    state = 15 & input = usr1_ni1_ne5 : 25;
+                    state = 15 & input = usr1_ni1_ne6 : 26;
+                    state = 16 & input = ai1_ce1 : 3;
+                    state = 16 & input = ai1_ce2 : 3;
+                    state = 16 & input = usr1_ai1_VoidReply : 3;
+                    state = 16 & input = usr2_ai1_VoidReply : 5;
+                    state = 16 & input = usr1_ni1_ne1 : 3;
+                    state = 16 & input = usr1_ni1_ne2 : 3;
+                    state = 16 & input = usr1_ni1_ne3 : 3;
+                    state = 16 & input = usr1_ni1_ne4 : 3;
+                    state = 16 & input = usr1_ni1_ne5 : 3;
+                    state = 16 & input = usr1_ni1_ne6 : 3;
+                    state = 17 & input = ai1_ce1 : 3;
+                    state = 17 & input = ai1_ce2 : 3;
+                    state = 17 & input = usr1_ai1_VoidReply : 3;
+                    state = 17 & input = usr2_ai1_VoidReply : 5;
+                    state = 17 & input = usr1_ni1_ne1 : 3;
+                    state = 17 & input = usr1_ni1_ne2 : 3;
+                    state = 17 & input = usr1_ni1_ne3 : 3;
+                    state = 17 & input = usr1_ni1_ne4 : 3;
+                    state = 17 & input = usr1_ni1_ne5 : 3;
+                    state = 17 & input = usr1_ni1_ne6 : 3;
+                    state = 18 & input = ai1_ce1 : 3;
+                    state = 18 & input = ai1_ce2 : 3;
+                    state = 18 & input = usr1_ai1_VoidReply : 3;
+                    state = 18 & input = usr2_ai1_VoidReply : 10;
+                    state = 18 & input = usr1_ni1_ne1 : 3;
+                    state = 18 & input = usr1_ni1_ne2 : 3;
+                    state = 18 & input = usr1_ni1_ne3 : 3;
+                    state = 18 & input = usr1_ni1_ne4 : 3;
+                    state = 18 & input = usr1_ni1_ne5 : 3;
+                    state = 18 & input = usr1_ni1_ne6 : 3;
+                    state = 19 & input = ai1_ce1 : 3;
+                    state = 19 & input = ai1_ce2 : 3;
+                    state = 19 & input = usr1_ai1_VoidReply : 3;
+                    state = 19 & input = usr2_ai1_VoidReply : 10;
+                    state = 19 & input = usr1_ni1_ne1 : 3;
+                    state = 19 & input = usr1_ni1_ne2 : 3;
+                    state = 19 & input = usr1_ni1_ne3 : 3;
+                    state = 19 & input = usr1_ni1_ne4 : 3;
+                    state = 19 & input = usr1_ni1_ne5 : 3;
+                    state = 19 & input = usr1_ni1_ne6 : 3;
+                    state = 20 & input = ai1_ce1 : 3;
+                    state = 20 & input = ai1_ce2 : 3;
+                    state = 20 & input = usr1_ai1_VoidReply : 3;
+                    state = 20 & input = usr2_ai1_VoidReply : 3;
+                    state = 20 & input = usr1_ni1_ne1 : 10;
+                    state = 20 & input = usr1_ni1_ne2 : 5;
+                    state = 20 & input = usr1_ni1_ne3 : 10;
+                    state = 20 & input = usr1_ni1_ne4 : 5;
+                    state = 20 & input = usr1_ni1_ne5 : 10;
+                    state = 20 & input = usr1_ni1_ne6 : 5;
+                    state = 21 & input = ai1_ce1 : 3;
+                    state = 21 & input = ai1_ce2 : 3;
+                    state = 21 & input = usr1_ai1_VoidReply : 10;
+                    state = 21 & input = usr2_ai1_VoidReply : 3;
+                    state = 21 & input = usr1_ni1_ne1 : 3;
+                    state = 21 & input = usr1_ni1_ne2 : 3;
+                    state = 21 & input = usr1_ni1_ne3 : 3;
+                    state = 21 & input = usr1_ni1_ne4 : 3;
+                    state = 21 & input = usr1_ni1_ne5 : 3;
+                    state = 21 & input = usr1_ni1_ne6 : 3;
+                    state = 22 & input = ai1_ce1 : 3;
+                    state = 22 & input = ai1_ce2 : 3;
+                    state = 22 & input = usr1_ai1_VoidReply : 5;
+                    state = 22 & input = usr2_ai1_VoidReply : 3;
+                    state = 22 & input = usr1_ni1_ne1 : 3;
+                    state = 22 & input = usr1_ni1_ne2 : 3;
+                    state = 22 & input = usr1_ni1_ne3 : 3;
+                    state = 22 & input = usr1_ni1_ne4 : 3;
+                    state = 22 & input = usr1_ni1_ne5 : 3;
+                    state = 22 & input = usr1_ni1_ne6 : 3;
+                    state = 23 & input = ai1_ce1 : 3;
+                    state = 23 & input = ai1_ce2 : 3;
+                    state = 23 & input = usr1_ai1_VoidReply : 10;
+                    state = 23 & input = usr2_ai1_VoidReply : 3;
+                    state = 23 & input = usr1_ni1_ne1 : 3;
+                    state = 23 & input = usr1_ni1_ne2 : 3;
+                    state = 23 & input = usr1_ni1_ne3 : 3;
+                    state = 23 & input = usr1_ni1_ne4 : 3;
+                    state = 23 & input = usr1_ni1_ne5 : 3;
+                    state = 23 & input = usr1_ni1_ne6 : 3;
+                    state = 24 & input = ai1_ce1 : 3;
+                    state = 24 & input = ai1_ce2 : 3;
+                    state = 24 & input = usr1_ai1_VoidReply : 5;
+                    state = 24 & input = usr2_ai1_VoidReply : 3;
+                    state = 24 & input = usr1_ni1_ne1 : 3;
+                    state = 24 & input = usr1_ni1_ne2 : 3;
+                    state = 24 & input = usr1_ni1_ne3 : 3;
+                    state = 24 & input = usr1_ni1_ne4 : 3;
+                    state = 24 & input = usr1_ni1_ne5 : 3;
+                    state = 24 & input = usr1_ni1_ne6 : 3;
+                    state = 25 & input = ai1_ce1 : 3;
+                    state = 25 & input = ai1_ce2 : 3;
+                    state = 25 & input = usr1_ai1_VoidReply : 10;
+                    state = 25 & input = usr2_ai1_VoidReply : 3;
+                    state = 25 & input = usr1_ni1_ne1 : 3;
+                    state = 25 & input = usr1_ni1_ne2 : 3;
+                    state = 25 & input = usr1_ni1_ne3 : 3;
+                    state = 25 & input = usr1_ni1_ne4 : 3;
+                    state = 25 & input = usr1_ni1_ne5 : 3;
+                    state = 25 & input = usr1_ni1_ne6 : 3;
+                    state = 26 & input = ai1_ce1 : 3;
+                    state = 26 & input = ai1_ce2 : 3;
+                    state = 26 & input = usr1_ai1_VoidReply : 5;
+                    state = 26 & input = usr2_ai1_VoidReply : 3;
+                    state = 26 & input = usr1_ni1_ne1 : 3;
+                    state = 26 & input = usr1_ni1_ne2 : 3;
+                    state = 26 & input = usr1_ni1_ne3 : 3;
+                    state = 26 & input = usr1_ni1_ne4 : 3;
+                    state = 26 & input = usr1_ni1_ne5 : 3;
+                    state = 26 & input = usr1_ni1_ne6 : 3;
+                    input = null : state;
+                   esac;
+    next(output) := case
+                    state = 0 & input = ai1_ce1 : usr1_ai1_ce1;
+                    state = 0 & input = ai1_ce2 : usr1_ai1_ce2;
+                    state = 0 & input = usr1_ai1_VoidReply : error;
+                    state = 0 & input = usr2_ai1_VoidReply : error;
+                    state = 0 & input = usr1_ni1_ne1 : usr2_ai1_ce1;
+                    state = 0 & input = usr1_ni1_ne2 : usr2_ai1_ce1;
+                    state = 0 & input = usr1_ni1_ne3 : usr2_ai1_ce1;
+                    state = 0 & input = usr1_ni1_ne4 : usr2_ai1_ce1;
+                    state = 0 & input = usr1_ni1_ne5 : usr2_ai1_ce1;
+                    state = 0 & input = usr1_ni1_ne6 : usr2_ai1_ce1;
+                    state = 1 & input = ai1_ce1 : error;
+                    state = 1 & input = ai1_ce2 : error;
+                    state = 1 & input = usr1_ai1_VoidReply : ai1_VoidReply;
+                    state = 1 & input = usr2_ai1_VoidReply : error;
+                    state = 1 & input = usr1_ni1_ne1 : none;
+                    state = 1 & input = usr1_ni1_ne2 : none;
+                    state = 1 & input = usr1_ni1_ne3 : none;
+                    state = 1 & input = usr1_ni1_ne4 : none;
+                    state = 1 & input = usr1_ni1_ne5 : none;
+                    state = 1 & input = usr1_ni1_ne6 : none;
+                    state = 2 & input = ai1_ce1 : error;
+                    state = 2 & input = ai1_ce2 : error;
+                    state = 2 & input = usr1_ai1_VoidReply : ai1_VoidReply;
+                    state = 2 & input = usr2_ai1_VoidReply : error;
+                    state = 2 & input = usr1_ni1_ne1 : none;
+                    state = 2 & input = usr1_ni1_ne2 : none;
+                    state = 2 & input = usr1_ni1_ne3 : none;
+                    state = 2 & input = usr1_ni1_ne4 : none;
+                    state = 2 & input = usr1_ni1_ne5 : none;
+                    state = 2 & input = usr1_ni1_ne6 : none;
+                    state = 3 & input = ai1_ce1 : error;
+                    state = 3 & input = ai1_ce2 : error;
+                    state = 3 & input = usr1_ai1_VoidReply : error;
+                    state = 3 & input = usr2_ai1_VoidReply : error;
+                    state = 3 & input = usr1_ni1_ne1 : error;
+                    state = 3 & input = usr1_ni1_ne2 : error;
+                    state = 3 & input = usr1_ni1_ne3 : error;
+                    state = 3 & input = usr1_ni1_ne4 : error;
+                    state = 3 & input = usr1_ni1_ne5 : error;
+                    state = 3 & input = usr1_ni1_ne6 : error;
+                    state = 4 & input = ai1_ce1 : error;
+                    state = 4 & input = ai1_ce2 : error;
+                    state = 4 & input = usr1_ai1_VoidReply : error;
+                    state = 4 & input = usr2_ai1_VoidReply : none;
+                    state = 4 & input = usr1_ni1_ne1 : error;
+                    state = 4 & input = usr1_ni1_ne2 : error;
+                    state = 4 & input = usr1_ni1_ne3 : error;
+                    state = 4 & input = usr1_ni1_ne4 : error;
+                    state = 4 & input = usr1_ni1_ne5 : error;
+                    state = 4 & input = usr1_ni1_ne6 : error;
+                    state = 5 & input = ai1_ce1 : error;
+                    state = 5 & input = ai1_ce2 : usr1_ai1_ce2;
+                    state = 5 & input = usr1_ai1_VoidReply : error;
+                    state = 5 & input = usr2_ai1_VoidReply : error;
+                    state = 5 & input = usr1_ni1_ne1 : ni1_ne1;
+                    state = 5 & input = usr1_ni1_ne2 : usr2_ai1_ce1;
+                    state = 5 & input = usr1_ni1_ne3 : ni1_ne3;
+                    state = 5 & input = usr1_ni1_ne4 : usr2_ai1_ce1;
+                    state = 5 & input = usr1_ni1_ne5 : ni1_ne5;
+                    state = 5 & input = usr1_ni1_ne6 : usr2_ai1_ce1;
+                    state = 6 & input = ai1_ce1 : error;
+                    state = 6 & input = ai1_ce2 : error;
+                    state = 6 & input = usr1_ai1_VoidReply : ni1_ne1__ai1_VoidReply;
+                    state = 6 & input = usr2_ai1_VoidReply : error;
+                    state = 6 & input = usr1_ni1_ne1 : error;
+                    state = 6 & input = usr1_ni1_ne2 : error;
+                    state = 6 & input = usr1_ni1_ne3 : error;
+                    state = 6 & input = usr1_ni1_ne4 : error;
+                    state = 6 & input = usr1_ni1_ne5 : error;
+                    state = 6 & input = usr1_ni1_ne6 : error;
+                    state = 7 & input = ai1_ce1 : error;
+                    state = 7 & input = ai1_ce2 : error;
+                    state = 7 & input = usr1_ai1_VoidReply : usr2_ai1_ce1;
+                    state = 7 & input = usr2_ai1_VoidReply : error;
+                    state = 7 & input = usr1_ni1_ne1 : error;
+                    state = 7 & input = usr1_ni1_ne2 : error;
+                    state = 7 & input = usr1_ni1_ne3 : error;
+                    state = 7 & input = usr1_ni1_ne4 : error;
+                    state = 7 & input = usr1_ni1_ne5 : error;
+                    state = 7 & input = usr1_ni1_ne6 : error;
+                    state = 8 & input = ai1_ce1 : error;
+                    state = 8 & input = ai1_ce2 : error;
+                    state = 8 & input = usr1_ai1_VoidReply : ni1_ne3__ai1_VoidReply;
+                    state = 8 & input = usr2_ai1_VoidReply : error;
+                    state = 8 & input = usr1_ni1_ne1 : error;
+                    state = 8 & input = usr1_ni1_ne2 : error;
+                    state = 8 & input = usr1_ni1_ne3 : error;
+                    state = 8 & input = usr1_ni1_ne4 : error;
+                    state = 8 & input = usr1_ni1_ne5 : error;
+                    state = 8 & input = usr1_ni1_ne6 : error;
+                    state = 9 & input = ai1_ce1 : error;
+                    state = 9 & input = ai1_ce2 : error;
+                    state = 9 & input = usr1_ai1_VoidReply : ni1_ne5__ai1_VoidReply;
+                    state = 9 & input = usr2_ai1_VoidReply : error;
+                    state = 9 & input = usr1_ni1_ne1 : error;
+                    state = 9 & input = usr1_ni1_ne2 : error;
+                    state = 9 & input = usr1_ni1_ne3 : error;
+                    state = 9 & input = usr1_ni1_ne4 : error;
+                    state = 9 & input = usr1_ni1_ne5 : error;
+                    state = 9 & input = usr1_ni1_ne6 : error;
+                    state = 10 & input = ai1_ce1 : usr1_ai1_ce1;
+                    state = 10 & input = ai1_ce2 : error;
+                    state = 10 & input = usr1_ai1_VoidReply : error;
+                    state = 10 & input = usr2_ai1_VoidReply : error;
+                    state = 10 & input = usr1_ni1_ne1 : usr2_ai1_ce1;
+                    state = 10 & input = usr1_ni1_ne2 : ni1_ne2;
+                    state = 10 & input = usr1_ni1_ne3 : usr2_ai1_ce1;
+                    state = 10 & input = usr1_ni1_ne4 : ni1_ne4;
+                    state = 10 & input = usr1_ni1_ne5 : usr2_ai1_ce1;
+                    state = 10 & input = usr1_ni1_ne6 : ni1_ne6;
+                    state = 11 & input = ai1_ce1 : error;
+                    state = 11 & input = ai1_ce2 : error;
+                    state = 11 & input = usr1_ai1_VoidReply : usr2_ai1_ce1;
+                    state = 11 & input = usr2_ai1_VoidReply : error;
+                    state = 11 & input = usr1_ni1_ne1 : error;
+                    state = 11 & input = usr1_ni1_ne2 : error;
+                    state = 11 & input = usr1_ni1_ne3 : error;
+                    state = 11 & input = usr1_ni1_ne4 : error;
+                    state = 11 & input = usr1_ni1_ne5 : error;
+                    state = 11 & input = usr1_ni1_ne6 : error;
+                    state = 12 & input = ai1_ce1 : error;
+                    state = 12 & input = ai1_ce2 : error;
+                    state = 12 & input = usr1_ai1_VoidReply : ni1_ne2__ai1_VoidReply;
+                    state = 12 & input = usr2_ai1_VoidReply : error;
+                    state = 12 & input = usr1_ni1_ne1 : error;
+                    state = 12 & input = usr1_ni1_ne2 : error;
+                    state = 12 & input = usr1_ni1_ne3 : error;
+                    state = 12 & input = usr1_ni1_ne4 : error;
+                    state = 12 & input = usr1_ni1_ne5 : error;
+                    state = 12 & input = usr1_ni1_ne6 : error;
+                    state = 13 & input = ai1_ce1 : error;
+                    state = 13 & input = ai1_ce2 : error;
+                    state = 13 & input = usr1_ai1_VoidReply : ni1_ne4__ai1_VoidReply;
+                    state = 13 & input = usr2_ai1_VoidReply : error;
+                    state = 13 & input = usr1_ni1_ne1 : error;
+                    state = 13 & input = usr1_ni1_ne2 : error;
+                    state = 13 & input = usr1_ni1_ne3 : error;
+                    state = 13 & input = usr1_ni1_ne4 : error;
+                    state = 13 & input = usr1_ni1_ne5 : error;
+                    state = 13 & input = usr1_ni1_ne6 : error;
+                    state = 14 & input = ai1_ce1 : error;
+                    state = 14 & input = ai1_ce2 : error;
+                    state = 14 & input = usr1_ai1_VoidReply : ni1_ne6__ai1_VoidReply;
+                    state = 14 & input = usr2_ai1_VoidReply : error;
+                    state = 14 & input = usr1_ni1_ne1 : error;
+                    state = 14 & input = usr1_ni1_ne2 : error;
+                    state = 14 & input = usr1_ni1_ne3 : error;
+                    state = 14 & input = usr1_ni1_ne4 : error;
+                    state = 14 & input = usr1_ni1_ne5 : error;
+                    state = 14 & input = usr1_ni1_ne6 : error;
+                    state = 15 & input = ai1_ce1 : error;
+                    state = 15 & input = ai1_ce2 : error;
+                    state = 15 & input = usr1_ai1_VoidReply : ai1_VoidReply;
+                    state = 15 & input = usr2_ai1_VoidReply : error;
+                    state = 15 & input = usr1_ni1_ne1 : none;
+                    state = 15 & input = usr1_ni1_ne2 : none;
+                    state = 15 & input = usr1_ni1_ne3 : none;
+                    state = 15 & input = usr1_ni1_ne4 : none;
+                    state = 15 & input = usr1_ni1_ne5 : none;
+                    state = 15 & input = usr1_ni1_ne6 : none;
+                    state = 16 & input = ai1_ce1 : error;
+                    state = 16 & input = ai1_ce2 : error;
+                    state = 16 & input = usr1_ai1_VoidReply : error;
+                    state = 16 & input = usr2_ai1_VoidReply : none;
+                    state = 16 & input = usr1_ni1_ne1 : error;
+                    state = 16 & input = usr1_ni1_ne2 : error;
+                    state = 16 & input = usr1_ni1_ne3 : error;
+                    state = 16 & input = usr1_ni1_ne4 : error;
+                    state = 16 & input = usr1_ni1_ne5 : error;
+                    state = 16 & input = usr1_ni1_ne6 : error;
+                    state = 17 & input = ai1_ce1 : error;
+                    state = 17 & input = ai1_ce2 : error;
+                    state = 17 & input = usr1_ai1_VoidReply : error;
+                    state = 17 & input = usr2_ai1_VoidReply : ai1_VoidReply;
+                    state = 17 & input = usr1_ni1_ne1 : error;
+                    state = 17 & input = usr1_ni1_ne2 : error;
+                    state = 17 & input = usr1_ni1_ne3 : error;
+                    state = 17 & input = usr1_ni1_ne4 : error;
+                    state = 17 & input = usr1_ni1_ne5 : error;
+                    state = 17 & input = usr1_ni1_ne6 : error;
+                    state = 18 & input = ai1_ce1 : error;
+                    state = 18 & input = ai1_ce2 : error;
+                    state = 18 & input = usr1_ai1_VoidReply : error;
+                    state = 18 & input = usr2_ai1_VoidReply : none;
+                    state = 18 & input = usr1_ni1_ne1 : error;
+                    state = 18 & input = usr1_ni1_ne2 : error;
+                    state = 18 & input = usr1_ni1_ne3 : error;
+                    state = 18 & input = usr1_ni1_ne4 : error;
+                    state = 18 & input = usr1_ni1_ne5 : error;
+                    state = 18 & input = usr1_ni1_ne6 : error;
+                    state = 19 & input = ai1_ce1 : error;
+                    state = 19 & input = ai1_ce2 : error;
+                    state = 19 & input = usr1_ai1_VoidReply : error;
+                    state = 19 & input = usr2_ai1_VoidReply : ai1_VoidReply;
+                    state = 19 & input = usr1_ni1_ne1 : error;
+                    state = 19 & input = usr1_ni1_ne2 : error;
+                    state = 19 & input = usr1_ni1_ne3 : error;
+                    state = 19 & input = usr1_ni1_ne4 : error;
+                    state = 19 & input = usr1_ni1_ne5 : error;
+                    state = 19 & input = usr1_ni1_ne6 : error;
+                    state = 20 & input = ai1_ce1 : error;
+                    state = 20 & input = ai1_ce2 : error;
+                    state = 20 & input = usr1_ai1_VoidReply : error;
+                    state = 20 & input = usr2_ai1_VoidReply : error;
+                    state = 20 & input = usr1_ni1_ne1 : ni1_ne1;
+                    state = 20 & input = usr1_ni1_ne2 : ni1_ne2;
+                    state = 20 & input = usr1_ni1_ne3 : ni1_ne3;
+                    state = 20 & input = usr1_ni1_ne4 : ni1_ne4;
+                    state = 20 & input = usr1_ni1_ne5 : ni1_ne5;
+                    state = 20 & input = usr1_ni1_ne6 : ni1_ne6;
+                    state = 21 & input = ai1_ce1 : error;
+                    state = 21 & input = ai1_ce2 : error;
+                    state = 21 & input = usr1_ai1_VoidReply : ni1_ne1__ai1_VoidReply;
+                    state = 21 & input = usr2_ai1_VoidReply : error;
+                    state = 21 & input = usr1_ni1_ne1 : error;
+                    state = 21 & input = usr1_ni1_ne2 : error;
+                    state = 21 & input = usr1_ni1_ne3 : error;
+                    state = 21 & input = usr1_ni1_ne4 : error;
+                    state = 21 & input = usr1_ni1_ne5 : error;
+                    state = 21 & input = usr1_ni1_ne6 : error;
+                    state = 22 & input = ai1_ce1 : error;
+                    state = 22 & input = ai1_ce2 : error;
+                    state = 22 & input = usr1_ai1_VoidReply : ni1_ne2__ai1_VoidReply;
+                    state = 22 & input = usr2_ai1_VoidReply : error;
+                    state = 22 & input = usr1_ni1_ne1 : error;
+                    state = 22 & input = usr1_ni1_ne2 : error;
+                    state = 22 & input = usr1_ni1_ne3 : error;
+                    state = 22 & input = usr1_ni1_ne4 : error;
+                    state = 22 & input = usr1_ni1_ne5 : error;
+                    state = 22 & input = usr1_ni1_ne6 : error;
+                    state = 23 & input = ai1_ce1 : error;
+                    state = 23 & input = ai1_ce2 : error;
+                    state = 23 & input = usr1_ai1_VoidReply : ni1_ne3__ai1_VoidReply;
+                    state = 23 & input = usr2_ai1_VoidReply : error;
+                    state = 23 & input = usr1_ni1_ne1 : error;
+                    state = 23 & input = usr1_ni1_ne2 : error;
+                    state = 23 & input = usr1_ni1_ne3 : error;
+                    state = 23 & input = usr1_ni1_ne4 : error;
+                    state = 23 & input = usr1_ni1_ne5 : error;
+                    state = 23 & input = usr1_ni1_ne6 : error;
+                    state = 24 & input = ai1_ce1 : error;
+                    state = 24 & input = ai1_ce2 : error;
+                    state = 24 & input = usr1_ai1_VoidReply : ni1_ne4__ai1_VoidReply;
+                    state = 24 & input = usr2_ai1_VoidReply : error;
+                    state = 24 & input = usr1_ni1_ne1 : error;
+                    state = 24 & input = usr1_ni1_ne2 : error;
+                    state = 24 & input = usr1_ni1_ne3 : error;
+                    state = 24 & input = usr1_ni1_ne4 : error;
+                    state = 24 & input = usr1_ni1_ne5 : error;
+                    state = 24 & input = usr1_ni1_ne6 : error;
+                    state = 25 & input = ai1_ce1 : error;
+                    state = 25 & input = ai1_ce2 : error;
+                    state = 25 & input = usr1_ai1_VoidReply : ni1_ne5__ai1_VoidReply;
+                    state = 25 & input = usr2_ai1_VoidReply : error;
+                    state = 25 & input = usr1_ni1_ne1 : error;
+                    state = 25 & input = usr1_ni1_ne2 : error;
+                    state = 25 & input = usr1_ni1_ne3 : error;
+                    state = 25 & input = usr1_ni1_ne4 : error;
+                    state = 25 & input = usr1_ni1_ne5 : error;
+                    state = 25 & input = usr1_ni1_ne6 : error;
+                    state = 26 & input = ai1_ce1 : error;
+                    state = 26 & input = ai1_ce2 : error;
+                    state = 26 & input = usr1_ai1_VoidReply : ni1_ne6__ai1_VoidReply;
+                    state = 26 & input = usr2_ai1_VoidReply : error;
+                    state = 26 & input = usr1_ni1_ne1 : error;
+                    state = 26 & input = usr1_ni1_ne2 : error;
+                    state = 26 & input = usr1_ni1_ne3 : error;
+                    state = 26 & input = usr1_ni1_ne4 : error;
+                    state = 26 & input = usr1_ni1_ne5 : error;
+                    state = 26 & input = usr1_ni1_ne6 : error;
+                    input = null : null;
+                   esac;
+INVAR !(input = null & output = null)
+    & !(input != null & output != null)
+-- false
+-- bad(good)
+-- ACTL: "AG ( (<usr1_ni1_ne5><usr2_ai1_ce1>true) => <usr1_ni1_ne3><usr2_ai1_ce1>(<usr2_ai1_VoidReply><none><usr1_ni1_ne6><ni1_ne6>true) )"
+-- transition matching both src, io and dest: 0 -> 4 : ?usr1_ni1_ne3/!usr2_ai1_ce1
+-- transition matching only src, io but just not dest: 10 -> 18 : ?usr1_ni1_ne3/!usr2_ai1_ce1
+SPEC AG( (EX(input=usr1_ni1_ne5 & EX(output=usr2_ai1_ce1))) -> EX(input=usr1_ni1_ne3 & EX(output=usr2_ai1_ce1 & (EX(input=usr2_ai1_VoidReply & EX(output=none & EX(input=usr1_ni1_ne6 & EX(output=ni1_ne6))))))) )
+-- false
+-- bad(good)
+-- ACTL: "AG ( (<usr1_ni1_ne5><usr2_ai1_ce1>true) => <ai1_ce1><usr1_ai1_ce1>(<usr1_ai1_VoidReply><ai1_VoidReply><usr1_ni1_ne6><ni1_ne6>true & <usr1_ai1_VoidReply><ai1_VoidReply><usr1_ni1_ne5><ni1_ne5>true) )"
+-- transition matching both src, io and dest: 0 -> 1 : ?ai1_ce1/!usr1_ai1_ce1
+-- transition matching only src, io but just not dest: 10 -> 15 : ?ai1_ce1/!usr1_ai1_ce1
+SPEC AG( (EX(input=usr1_ni1_ne5 & EX(output=usr2_ai1_ce1))) -> EX(input=ai1_ce1 & EX(output=usr1_ai1_ce1 & (EX(input=usr1_ai1_VoidReply & EX(output=ai1_VoidReply & EX(input=usr1_ni1_ne6 & EX(output=ni1_ne6)))) & EX(input=usr1_ai1_VoidReply & EX(output=ai1_VoidReply & EX(input=usr1_ni1_ne5 & EX(output=ni1_ne5))))))) )
+-- false
+-- bad(good)
+-- ACTL: "AG ( (<usr1_ni1_ne5><usr2_ai1_ce1>true) => <usr1_ni1_ne5><usr2_ai1_ce1>(<usr2_ai1_VoidReply><none><usr1_ni1_ne6><ni1_ne6>true) )"
+-- transition matching both src, io and dest: 0 -> 4 : ?usr1_ni1_ne5/!usr2_ai1_ce1
+-- transition matching only src, io but just not dest: 10 -> 18 : ?usr1_ni1_ne5/!usr2_ai1_ce1
+SPEC AG( (EX(input=usr1_ni1_ne5 & EX(output=usr2_ai1_ce1))) -> EX(input=usr1_ni1_ne5 & EX(output=usr2_ai1_ce1 & (EX(input=usr2_ai1_VoidReply & EX(output=none & EX(input=usr1_ni1_ne6 & EX(output=ni1_ne6))))))) )
+-- false
+-- 
+-- connection
+-- ACTL: AG ( (<usr1_ni1_ne6><error>true) => EF (<usr1_ai1_VoidReply><usr2_ai1_ce1><usr2_ai1_VoidReply><ai1_VoidReply><usr1_ni1_ne6><usr2_ai1_ce1>true) )
+SPEC AG( (EX(input=usr1_ni1_ne6 & EX(output=error))) -> EF(EX(input=usr1_ai1_VoidReply & EX(output=usr2_ai1_ce1 & EX(input=usr2_ai1_VoidReply & EX(output=ai1_VoidReply & EX(input=usr1_ni1_ne6 & EX(output=usr2_ai1_ce1))))))) )
+-- false
+-- 
+-- connection
+-- ACTL: AG ( (<usr1_ni1_ne6><error>true) => EF (<usr1_ai1_VoidReply><usr2_ai1_ce1><usr2_ai1_VoidReply><ai1_VoidReply><usr1_ni1_ne6><ni1_ne6>true) )
+SPEC AG( (EX(input=usr1_ni1_ne6 & EX(output=error))) -> EF(EX(input=usr1_ai1_VoidReply & EX(output=usr2_ai1_ce1 & EX(input=usr2_ai1_VoidReply & EX(output=ai1_VoidReply & EX(input=usr1_ni1_ne6 & EX(output=ni1_ne6))))))) )
+-- false
+-- bad(good)
+-- ACTL: "AG ( (<usr1_ni1_ne6><usr2_ai1_ce1>true) => <usr1_ni1_ne4><usr2_ai1_ce1>(<usr2_ai1_VoidReply><none><usr1_ni1_ne5><ni1_ne5>true) )"
+-- transition matching both src, io and dest: 0 -> 4 : ?usr1_ni1_ne4/!usr2_ai1_ce1
+-- transition matching only src, io but just not dest: 5 -> 16 : ?usr1_ni1_ne4/!usr2_ai1_ce1
+SPEC AG( (EX(input=usr1_ni1_ne6 & EX(output=usr2_ai1_ce1))) -> EX(input=usr1_ni1_ne4 & EX(output=usr2_ai1_ce1 & (EX(input=usr2_ai1_VoidReply & EX(output=none & EX(input=usr1_ni1_ne5 & EX(output=ni1_ne5))))))) )
+-- false
+-- bad(good)
+-- ACTL: "AG ( (<usr1_ni1_ne6><usr2_ai1_ce1>true) => <usr1_ni1_ne6><usr2_ai1_ce1>(<usr2_ai1_VoidReply><none><usr1_ni1_ne5><ni1_ne5>true) )"
+-- transition matching both src, io and dest: 0 -> 4 : ?usr1_ni1_ne6/!usr2_ai1_ce1
+-- transition matching only src, io but just not dest: 5 -> 16 : ?usr1_ni1_ne6/!usr2_ai1_ce1
+SPEC AG( (EX(input=usr1_ni1_ne6 & EX(output=usr2_ai1_ce1))) -> EX(input=usr1_ni1_ne6 & EX(output=usr2_ai1_ce1 & (EX(input=usr2_ai1_VoidReply & EX(output=none & EX(input=usr1_ni1_ne5 & EX(output=ni1_ne5))))))) )
+-- true
+-- 
+-- connection
+-- ACTL: AG ( (<usr1_ai1_VoidReply><ni1_ne3__ai1_VoidReply><usr1_ni1_ne6><usr2_ai1_ce1>true) => EF (<usr1_ai1_VoidReply><usr2_ai1_ce1><usr2_ai1_VoidReply><ai1_VoidReply><usr1_ni1_ne6><usr2_ai1_ce1>true) )
+SPEC AG( (EX(input=usr1_ai1_VoidReply & EX(output=ni1_ne3__ai1_VoidReply & EX(input=usr1_ni1_ne6 & EX(output=usr2_ai1_ce1))))) -> EF(EX(input=usr1_ai1_VoidReply & EX(output=usr2_ai1_ce1 & EX(input=usr2_ai1_VoidReply & EX(output=ai1_VoidReply & EX(input=usr1_ni1_ne6 & EX(output=usr2_ai1_ce1))))))) )
+-- true
+-- 
+-- good
+-- transition  : 2 -> 12 : ?usr1_ni1_ne2/!none
+-- ACTL: AG ( (<usr1_ai1_VoidReply><ai1_VoidReply><usr1_ni1_ne5><usr2_ai1_ce1>true) => <usr1_ni1_ne2><none>(<usr1_ai1_VoidReply><ni1_ne2__ai1_VoidReply><usr1_ni1_ne5><usr2_ai1_ce1>true) )
+SPEC AG( (EX(input=usr1_ai1_VoidReply & EX(output=ai1_VoidReply & EX(input=usr1_ni1_ne5 & EX(output=usr2_ai1_ce1))))) -> EX(input=usr1_ni1_ne2 & EX(output=none & (EX(input=usr1_ai1_VoidReply & EX(output=ni1_ne2__ai1_VoidReply & EX(input=usr1_ni1_ne5 & EX(output=usr2_ai1_ce1))))))) )
+-- true
+-- 
+-- good
+-- transition  : 1 -> 5 : ?usr1_ai1_VoidReply/!ai1_VoidReply
+-- ACTL: AG ( (<usr1_ai1_VoidReply><ai1_VoidReply><usr1_ni1_ne6><usr2_ai1_ce1>true) => <usr1_ai1_VoidReply><ai1_VoidReply>(<usr1_ni1_ne6><usr2_ai1_ce1>true & <usr1_ni1_ne5><ni1_ne5>true) )
+SPEC AG( (EX(input=usr1_ai1_VoidReply & EX(output=ai1_VoidReply & EX(input=usr1_ni1_ne6 & EX(output=usr2_ai1_ce1))))) -> EX(input=usr1_ai1_VoidReply & EX(output=ai1_VoidReply & (EX(input=usr1_ni1_ne6 & EX(output=usr2_ai1_ce1)) & EX(input=usr1_ni1_ne5 & EX(output=ni1_ne5))))) )
+-- true
+-- 
+-- good
+-- transition  : 2 -> 11 : ?usr1_ni1_ne3/!none
+-- ACTL: AG ( (<usr1_ai1_VoidReply><ai1_VoidReply><usr1_ni1_ne5><usr2_ai1_ce1>true) => <usr1_ni1_ne3><none>(<usr1_ai1_VoidReply><usr2_ai1_ce1><usr2_ai1_VoidReply><ai1_VoidReply><usr1_ni1_ne6><ni1_ne6>true) )
+SPEC AG( (EX(input=usr1_ai1_VoidReply & EX(output=ai1_VoidReply & EX(input=usr1_ni1_ne5 & EX(output=usr2_ai1_ce1))))) -> EX(input=usr1_ni1_ne3 & EX(output=none & (EX(input=usr1_ai1_VoidReply & EX(output=usr2_ai1_ce1 & EX(input=usr2_ai1_VoidReply & EX(output=ai1_VoidReply & EX(input=usr1_ni1_ne6 & EX(output=ni1_ne6))))))))) )
+-- false
+-- bad(good)
+-- ACTL: "AG ( (<usr1_ni1_ne6><usr2_ai1_ce1>true) => <ai1_ce2><usr1_ai1_ce2>(<usr1_ai1_VoidReply><ai1_VoidReply><usr1_ni1_ne6><ni1_ne6>true & <usr1_ai1_VoidReply><ai1_VoidReply><usr1_ni1_ne5><ni1_ne5>true) )"
+-- transition matching both src, io and dest: 0 -> 2 : ?ai1_ce2/!usr1_ai1_ce2
+-- transition matching only src, io but just not dest: 5 -> 15 : ?ai1_ce2/!usr1_ai1_ce2
+SPEC AG( (EX(input=usr1_ni1_ne6 & EX(output=usr2_ai1_ce1))) -> EX(input=ai1_ce2 & EX(output=usr1_ai1_ce2 & (EX(input=usr1_ai1_VoidReply & EX(output=ai1_VoidReply & EX(input=usr1_ni1_ne6 & EX(output=ni1_ne6)))) & EX(input=usr1_ai1_VoidReply & EX(output=ai1_VoidReply & EX(input=usr1_ni1_ne5 & EX(output=ni1_ne5))))))) )
+-- true
+-- 
+-- good
+-- transition  : 5 -> 0 : ?usr1_ni1_ne3/!ni1_ne3
+-- ACTL: AG ( (<usr1_ni1_ne6><usr2_ai1_ce1>true & <usr1_ni1_ne5><ni1_ne5>true) => <usr1_ni1_ne3><ni1_ne3>(<usr1_ni1_ne6><usr2_ai1_ce1>true & <usr1_ni1_ne5><usr2_ai1_ce1>true) )
+SPEC AG( (EX(input=usr1_ni1_ne6 & EX(output=usr2_ai1_ce1)) & EX(input=usr1_ni1_ne5 & EX(output=ni1_ne5))) -> EX(input=usr1_ni1_ne3 & EX(output=ni1_ne3 & (EX(input=usr1_ni1_ne6 & EX(output=usr2_ai1_ce1)) & EX(input=usr1_ni1_ne5 & EX(output=usr2_ai1_ce1))))) )
+-- true
+-- 
+-- good
+-- transition  : 10 -> 15 : ?ai1_ce1/!usr1_ai1_ce1
+-- ACTL: AG ( (<usr1_ni1_ne6><ni1_ne6>true & <usr1_ni1_ne5><usr2_ai1_ce1>true) => <ai1_ce1><usr1_ai1_ce1>(<usr1_ai1_VoidReply><ai1_VoidReply><usr1_ni1_ne6><ni1_ne6>true & <usr1_ai1_VoidReply><ai1_VoidReply><usr1_ni1_ne5><ni1_ne5>true) )
+SPEC AG( (EX(input=usr1_ni1_ne6 & EX(output=ni1_ne6)) & EX(input=usr1_ni1_ne5 & EX(output=usr2_ai1_ce1))) -> EX(input=ai1_ce1 & EX(output=usr1_ai1_ce1 & (EX(input=usr1_ai1_VoidReply & EX(output=ai1_VoidReply & EX(input=usr1_ni1_ne6 & EX(output=ni1_ne6)))) & EX(input=usr1_ai1_VoidReply & EX(output=ai1_VoidReply & EX(input=usr1_ni1_ne5 & EX(output=ni1_ne5))))))) )
+-- true
+-- 
+-- good
+-- transition  : 2 -> 11 : ?usr1_ni1_ne5/!none
+-- ACTL: AG ( (<usr1_ai1_VoidReply><ai1_VoidReply><usr1_ni1_ne5><usr2_ai1_ce1>true) => <usr1_ni1_ne5><none>(<usr1_ai1_VoidReply><usr2_ai1_ce1><usr2_ai1_VoidReply><ai1_VoidReply><usr1_ni1_ne6><ni1_ne6>true) )
+SPEC AG( (EX(input=usr1_ai1_VoidReply & EX(output=ai1_VoidReply & EX(input=usr1_ni1_ne5 & EX(output=usr2_ai1_ce1))))) -> EX(input=usr1_ni1_ne5 & EX(output=none & (EX(input=usr1_ai1_VoidReply & EX(output=usr2_ai1_ce1 & EX(input=usr2_ai1_VoidReply & EX(output=ai1_VoidReply & EX(input=usr1_ni1_ne6 & EX(output=ni1_ne6))))))))) )
+-- false
+-- bad(good)
+-- ACTL: "AG ( (<usr1_ai1_VoidReply><ni1_ne4__ai1_VoidReply>true) => <usr1_ai1_VoidReply><ni1_ne4__ai1_VoidReply>(<usr1_ni1_ne6><usr2_ai1_ce1>true & <usr1_ni1_ne5><usr2_ai1_ce1>true) )"
+-- transition matching both src, io and dest: 24 -> 5 : ?usr1_ai1_VoidReply/!ni1_ne4__ai1_VoidReply
+-- transition matching only src, io but just not dest: 13 -> 0 : ?usr1_ai1_VoidReply/!ni1_ne4__ai1_VoidReply
+SPEC AG( (EX(input=usr1_ai1_VoidReply & EX(output=ni1_ne4__ai1_VoidReply))) -> EX(input=usr1_ai1_VoidReply & EX(output=ni1_ne4__ai1_VoidReply & (EX(input=usr1_ni1_ne6 & EX(output=usr2_ai1_ce1)) & EX(input=usr1_ni1_ne5 & EX(output=usr2_ai1_ce1))))) )
+-- false
+-- bad(good)
+-- ACTL: "AG ( (<usr1_ni1_ne6><usr2_ai1_ce1>true) => <usr1_ni1_ne2><usr2_ai1_ce1>(<usr2_ai1_VoidReply><none><usr1_ni1_ne5><ni1_ne5>true) )"
+-- transition matching both src, io and dest: 0 -> 4 : ?usr1_ni1_ne2/!usr2_ai1_ce1
+-- transition matching only src, io but just not dest: 5 -> 16 : ?usr1_ni1_ne2/!usr2_ai1_ce1
+SPEC AG( (EX(input=usr1_ni1_ne6 & EX(output=usr2_ai1_ce1))) -> EX(input=usr1_ni1_ne2 & EX(output=usr2_ai1_ce1 & (EX(input=usr2_ai1_VoidReply & EX(output=none & EX(input=usr1_ni1_ne5 & EX(output=ni1_ne5))))))) )
+-- false
+-- bad(good)
+-- ACTL: "AG ( (<usr1_ai1_VoidReply><ni1_ne5__ai1_VoidReply>true) => <usr1_ai1_VoidReply><ni1_ne5__ai1_VoidReply>(<usr1_ni1_ne6><ni1_ne6>true & <usr1_ni1_ne5><usr2_ai1_ce1>true) )"
+-- transition matching both src, io and dest: 9 -> 0 : ?usr1_ai1_VoidReply/!ni1_ne5__ai1_VoidReply
+-- transition matching only src, io but just not dest: 25 -> 10 : ?usr1_ai1_VoidReply/!ni1_ne5__ai1_VoidReply
+SPEC AG( (EX(input=usr1_ai1_VoidReply & EX(output=ni1_ne5__ai1_VoidReply))) -> EX(input=usr1_ai1_VoidReply & EX(output=ni1_ne5__ai1_VoidReply & (EX(input=usr1_ni1_ne6 & EX(output=ni1_ne6)) & EX(input=usr1_ni1_ne5 & EX(output=usr2_ai1_ce1))))) )
+-- false
+-- bad(good)
+-- ACTL: "AG ( (<usr1_ni1_ne5><usr2_ai1_ce1>true) => <usr1_ni1_ne1><usr2_ai1_ce1>(<usr2_ai1_VoidReply><none><usr1_ni1_ne6><ni1_ne6>true) )"
+-- transition matching both src, io and dest: 0 -> 4 : ?usr1_ni1_ne1/!usr2_ai1_ce1
+-- transition matching only src, io but just not dest: 10 -> 18 : ?usr1_ni1_ne1/!usr2_ai1_ce1
+SPEC AG( (EX(input=usr1_ni1_ne5 & EX(output=usr2_ai1_ce1))) -> EX(input=usr1_ni1_ne1 & EX(output=usr2_ai1_ce1 & (EX(input=usr2_ai1_VoidReply & EX(output=none & EX(input=usr1_ni1_ne6 & EX(output=ni1_ne6))))))) )
+-- true
+-- 
+-- good
+-- transition  : 14 -> 0 : ?usr1_ai1_VoidReply/!ni1_ne6__ai1_VoidReply
+-- ACTL: AG ( (<usr1_ai1_VoidReply><ni1_ne6__ai1_VoidReply><usr1_ni1_ne5><usr2_ai1_ce1>true) => <usr1_ai1_VoidReply><ni1_ne6__ai1_VoidReply>(<usr1_ni1_ne6><usr2_ai1_ce1>true & <usr1_ni1_ne5><usr2_ai1_ce1>true) )
+SPEC AG( (EX(input=usr1_ai1_VoidReply & EX(output=ni1_ne6__ai1_VoidReply & EX(input=usr1_ni1_ne5 & EX(output=usr2_ai1_ce1))))) -> EX(input=usr1_ai1_VoidReply & EX(output=ni1_ne6__ai1_VoidReply & (EX(input=usr1_ni1_ne6 & EX(output=usr2_ai1_ce1)) & EX(input=usr1_ni1_ne5 & EX(output=usr2_ai1_ce1))))) )

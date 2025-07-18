@@ -1,0 +1,62 @@
+#inputs [usr1_ni1_ne6, usr1_ni1_ne7, usr1_ni1_ne4, usr1_ni1_ne5, usr1_ni1_ne2, usr1_ni1_ne3, usr1_ni1_ne1, usr3_ai1_re1, usr1_ni1_ne8, usr1_ni1_ne9, usr5_ai3_re2, usr5_ai3_re1, usr1_ai1_VoidReply, ai1_ce1, ai1_ce3, ai1_ce2, ai1_ce4, usr2_ai1_VoidReply, usr1_ni1_ne14, usr1_ni1_ne15, usr1_ni1_ne16, usr1_ni1_ne17, usr1_ni1_ne10, usr1_ni1_ne11, usr1_ni1_ne12, usr1_ni1_ne13, usr4_ai1_re6, usr4_ai1_re7]
+#outputs [usr4_ai1_ce11, usr5_ai3_ce49, ni1_ne9__usr2_ai1_ce12, ni1_ne9__ni1_ne10, ni1_ne9, ni1_ne8, ni1_ne2, ni1_ne3, ai1_VoidReply, ni1_ne5, ni1_ne4, ni1_ne14__usr2_ai1_ce8, ni1_ne9__ai1_VoidReply, ni1_ne13, ni1_ne12, ni1_ne10, ni1_ne8__usr2_ai1_ce6, usr1_ai1_ce4, ni1_ne3__usr2_ai1_ce5, ni1_ne7__usr2_ai1_ce8, usr1_ai1_ce1, usr1_ai1_ce2, usr1_ai1_ce3, ni1_ne1__usr2_ai1_ce7, usr3_ai1_ce1, usr2_ai1_ce13, usr2_ai1_ce12, usr2_ai1_ce11, usr2_ai1_ce10, usr2_ai1_ce17, usr2_ai1_ce16, usr2_ai1_ce15, usr2_ai1_ce14, usr2_ai1_ce18, none, ni1_ne4__usr2_ai1_ce13, ni1_ne6__usr2_ai1_ce9, ni1_ne9__ni1_ne10__ai1_VoidReply, usr2_ai1_ce6, usr2_ai1_ce5, usr2_ai1_ce4, usr2_ai1_ce3, usr2_ai1_ce2, usr2_ai1_ce1, ni1_ne2__ai1_VoidReply, ni1_ne11__usr3_ai1_ce1]
+#0: input usr3_ai1_re1, input ai1_ce4 precedes output ni1_ne1__usr2_ai1_ce7 before output usr1_ai1_ce1
+(! (true U ousr1_ai1_ce1) | (! oni1_ne1__usr2_ai1_ce7 U (ousr1_ai1_ce1 | ((iusr3_ai1_re1 & ! oni1_ne1__usr2_ai1_ce7) & X (! oni1_ne1__usr2_ai1_ce7 U iai1_ce4)))))
+
+#1: output ni1_ne4__usr2_ai1_ce13, output ni1_ne9 without output usr1_ai1_ce2 responds to input ai1_ce3 before output usr1_ai1_ce1
+(! (true U ousr1_ai1_ce1) | ((! iai1_ce3 | (! ousr1_ai1_ce1 U (((oni1_ne4__usr2_ai1_ce13 & ! ousr1_ai1_ce1) & ! ousr1_ai1_ce2) & X ((! ousr1_ai1_ce1 & ! ousr1_ai1_ce2) U oni1_ne9)))) U ousr1_ai1_ce1))
+
+#2: output usr2_ai1_ce2 always precedes output usr1_ai1_ce2, output usr2_ai1_ce15
+(! (true U (ousr1_ai1_ce2 & X (true U ousr2_ai1_ce15))) | (! ousr1_ai1_ce2 U ousr2_ai1_ce2))
+
+#3: output ni1_ne11__usr3_ai1_ce1 always responds to input usr5_ai3_re1, input usr1_ni1_ne3
+(false R (iusr5_ai3_re1 & (! X (true U iusr1_ni1_ne3) | X (true U (iusr1_ni1_ne3 & (true U oni1_ne11__usr3_ai1_ce1))))))
+
+#4: output ni1_ne9 responds to input usr1_ni1_ne9, input usr1_ni1_ne4 after output ai1_VoidReply
+(false R (! oai1_VoidReply | (false R (iusr1_ni1_ne9 & (! X (true U iusr1_ni1_ne4) | X (! iusr1_ni1_ne4 U (iusr1_ni1_ne4 & (true U oni1_ne9))))))))
+
+#5: input usr2_ai1_VoidReply precedes output usr2_ai1_ce18, output usr2_ai1_ce5 before output ni1_ne10
+(! (true U oni1_ne10) | (! ((ousr2_ai1_ce18 & ! oni1_ne10) & X (! oni1_ne10 U (ousr2_ai1_ce5 & ! oni1_ne10))) U (oni1_ne10 | iusr2_ai1_VoidReply)))
+
+#6: input ai1_ce4 precedes output ni1_ne9__usr2_ai1_ce12 between output usr1_ai1_ce1 and output ni1_ne9
+(false R (! ((ousr1_ai1_ce1 & ! oni1_ne9) & (true U oni1_ne9)) | (! oni1_ne9__usr2_ai1_ce12 U (iai1_ce4 | oni1_ne9))))
+
+#7: output usr2_ai1_ce10 always responds to input usr2_ai1_VoidReply, input usr1_ni1_ne1
+(false R (iusr2_ai1_VoidReply & (! X (true U iusr1_ni1_ne1) | X (true U (iusr1_ni1_ne1 & (true U ousr2_ai1_ce10))))))
+
+#8: output ni1_ne9__usr2_ai1_ce12, output usr2_ai1_ce3 without output ni1_ne11__usr3_ai1_ce1 always responds to input usr1_ni1_ne2
+(false R (! iusr1_ni1_ne2 | (true U ((oni1_ne9__usr2_ai1_ce12 & ! oni1_ne11__usr3_ai1_ce1) & X (! oni1_ne11__usr3_ai1_ce1 U ousr2_ai1_ce3)))))
+
+#9: output ni1_ne4 precedes output usr2_ai1_ce10 before input ai1_ce1
+(! (true U iai1_ce1) | (! ousr2_ai1_ce10 U (oni1_ne4 | iai1_ce1)))
+
+#10: output usr2_ai1_ce12 precedes output usr2_ai1_ce6, output ni1_ne2__ai1_VoidReply before input usr1_ai1_VoidReply
+(! (true U iusr1_ai1_VoidReply) | (! ((ousr2_ai1_ce6 & ! iusr1_ai1_VoidReply) & X (! iusr1_ai1_VoidReply U (oni1_ne2__ai1_VoidReply & ! iusr1_ai1_VoidReply))) U (iusr1_ai1_VoidReply | ousr2_ai1_ce12)))
+
+#11: output ni1_ne13 responds to input usr1_ni1_ne12 between input ai1_ce3 and input usr1_ni1_ne5
+(false R (! ((iai1_ce3 & ! iusr1_ni1_ne5) & (true U iusr1_ni1_ne5)) | ((! iusr1_ni1_ne12 | (! iusr1_ni1_ne5 U (oni1_ne13 & ! iusr1_ni1_ne5))) U iusr1_ni1_ne5)))
+
+#12: output ai1_VoidReply precedes output ni1_ne13, output none between output usr2_ai1_ce1 and output usr2_ai1_ce5
+(false R (! (ousr2_ai1_ce1 & (true U ousr2_ai1_ce5)) | (! ((oni1_ne13 & ! ousr2_ai1_ce5) & X (! ousr2_ai1_ce5 U (onone & ! ousr2_ai1_ce5))) U (ousr2_ai1_ce5 | oai1_VoidReply))))
+
+#13: output ai1_VoidReply always precedes output ni1_ne9__usr2_ai1_ce12
+(! oni1_ne9__usr2_ai1_ce12 WU oai1_VoidReply)
+
+#14: output ni1_ne3 precedes output none before input usr1_ai1_VoidReply
+(! (true U iusr1_ai1_VoidReply) | (! onone U (oni1_ne3 | iusr1_ai1_VoidReply)))
+
+#15: input usr3_ai1_re1 precedes output usr2_ai1_ce4, output ni1_ne9 before output usr1_ai1_ce4
+(! (true U ousr1_ai1_ce4) | (! ((ousr2_ai1_ce4 & ! ousr1_ai1_ce4) & X (! ousr1_ai1_ce4 U (oni1_ne9 & ! ousr1_ai1_ce4))) U (ousr1_ai1_ce4 | iusr3_ai1_re1)))
+
+#16: output usr2_ai1_ce6, output usr2_ai1_ce4 without output usr2_ai1_ce1 responds to input usr1_ni1_ne14 after input usr5_ai3_re2
+(false R (! iusr5_ai3_re2 | (false R (! iusr1_ni1_ne14 | ((ousr2_ai1_ce6 & ! ousr2_ai1_ce1) & X (! ousr2_ai1_ce1 U ousr2_ai1_ce4))))))
+
+#17: output ni1_ne9__ni1_ne10 precedes output ni1_ne11__usr3_ai1_ce1, output usr1_ai1_ce1 between input usr1_ni1_ne5 and input usr1_ni1_ne7
+(false R (! (iusr1_ni1_ne5 & (true U iusr1_ni1_ne7)) | (! ((oni1_ne11__usr3_ai1_ce1 & ! iusr1_ni1_ne7) & X (! iusr1_ni1_ne7 U (ousr1_ai1_ce1 & ! iusr1_ni1_ne7))) U (iusr1_ni1_ne7 | oni1_ne9__ni1_ne10))))
+
+#18: output usr2_ai1_ce2 always precedes output ni1_ne9__ai1_VoidReply
+(! oni1_ne9__ai1_VoidReply WU ousr2_ai1_ce2)
+
+#19: output usr2_ai1_ce17, output ni1_ne9 without output ai1_VoidReply always responds to input usr2_ai1_VoidReply
+(false R (! iusr2_ai1_VoidReply | (true U ((ousr2_ai1_ce17 & ! oai1_VoidReply) & X (! oai1_VoidReply U oni1_ne9)))))
+
