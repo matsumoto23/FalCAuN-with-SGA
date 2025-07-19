@@ -31,7 +31,7 @@ tar xvf ltsmin-v3.1.0-linux.tgz
 sudo install v3.1.0/bin/* /usr/local/bin/
 
 wget https://github.com/owl-toolkit/owl/releases/download/release-21.0/owl-linux-amd64-21.0.zip
-unzip owl-linux-amd64-21.0.zip /owl
+unzip owl-linux-amd64-21.0.zip -d owl
 sudo cp -r owl /usr/lib/
 ```
 

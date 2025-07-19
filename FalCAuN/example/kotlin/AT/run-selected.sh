@@ -9,7 +9,7 @@ do
       echo "===================================="
       echo "$mode"_AT"$index"_iteration:"$iteration"
       echo "===================================="
-      (time (timeout 1260 ./AT$index.kts $mode)) | tee ./log/AT"$index"/"$mode"_"$iteration".txt
+      time timeout 1260 ./AT$index.kts $mode | tee ./log/AT"$index"/"$mode"_"$iteration".txt
     done
   done
 done
