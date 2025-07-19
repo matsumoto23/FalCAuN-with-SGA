@@ -1,6 +1,6 @@
 mkdir ./FalCAuN/example/kotlin/AT/log/
 mkdir ./FalCAuN/example/kotlin/CC/log/
-mkdir ./FalCAuN/example/kotlin/WhiteboxMealy/log/
+mkdir ./FalCAuN/example/kotlin/RERS/log/
 
 for bench_index in 1 2 2_2 3 4 4_2 5 6 7 8 9
 do

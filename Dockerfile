@@ -78,5 +78,3 @@ RUN source ~/.sdkman/bin/sdkman-init.sh \
 WORKDIR /home/matlab/FalCAuN-with-SGA
 
 RUN echo 'source ~/.sdkman/bin/sdkman-init.sh' >> ~/.bashrc
-
-ENTRYPOINT [ "/bin/bash" ]

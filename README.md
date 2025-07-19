@@ -1,4 +1,4 @@
-# 
+We tested on Debian 12 bookworm
 
 # Requirements
 The requirements for FalCAuN-with-SGA are as follows.
@@ -56,6 +56,7 @@ Before running the scripts below, run openExample('simulink_automotive/ModelingA
 ## List of scripts
 |Name|Short description|Estimated execution time|
 |:---|:---|---:|
+|install.sh|create directory for log|1 sec|
 |run-RERS.sh|run all the benchmarks for RERS 60 times|2 hours|
 |run-AT-all.sh|run all the benchmarks for AT 60 times|300 hours|
 |run-CC-all.sh|run all the benchmarks for CC 60 times|60 hours|
@@ -63,7 +64,12 @@ Before running the scripts below, run openExample('simulink_automotive/ModelingA
 |run-CC-selected.sh|run CC1, CC2 and CC6 3 times|1 hour|
 
 ## Reproduce the results
-You can reproduce the full results in the paper with the command:
+First, you need to run install script to create directories for log files:
+```sh
+./install.sh
+```
+
+Then, you can reproduce the full results in the paper with the command:
 ```sh
 ./run-RERS.sh && ./run-AT-all.sh && ./run-CC-all.sh
 ```
@@ -76,9 +82,13 @@ Since runnning all the benchmarks for AT and CC takes long time, you can also re
 ## Run each benchmark
 Each benchmark in [FalCAuN/example/kotlin/AT](/FalCAuN/example/kotlin/AT) and [FalCAuN/example/kotlin/CC](/FalCAuN/example/kotlin/CC) can be run with the command:
 ```sh
-filename mode
+./bench_name.kts mode
 ```
 The variable mode must be one of 'original', 'partial', 'abstract' corresponding to the method NOABS, DISJSENSE, COARSEST in the paper, respectively.
+For example, you can run AT1 with COARSEST with the following command:
+```sh
+./AT1.kts abstract
+```
 
 ## Run AT/CC with other specifications
 To run falsification of AT/CC models with other specifications, please refer to [Tutorial for AT benchmarks](/FalCAuN/example/kotlin/AT/tutorial.md) and change the initiallization of input/output mappers and STL properties.
