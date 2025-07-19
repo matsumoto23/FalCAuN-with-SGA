@@ -23,7 +23,7 @@ sdk install java 11.0.27-amzn
 sdk install maven
 ```
 
-You have to manually install LTSmin, Owl and MATLAB/Simulink.
+You have to manually install LTSmin, Owl, and MATLAB/Simulink.
 For example, LTSmin and Owl can be installed with the commands:
 ```sh
 wget https://github.com/Meijuh/ltsmin/releases/download/v3.1.0/ltsmin-v3.1.0-linux.tgz
@@ -36,8 +36,8 @@ sudo cp -r owl /usr/lib/
 ```
 
 We use kscript to run each benchmark.
-So, you need to Install Kotlin 1.9.24 and kscript.
-For example, Kotlin and kscript can be installed with following commands:
+So, you need to install Kotlin 1.9.24 and kscript.
+For example, Kotlin and kscript can be installed with the following commands:
 ```sh
 sdk install kotlin 1.9.24
 sdk install kscript
@@ -50,8 +50,15 @@ cd FalCAuN
 mvn clean install
 ```
 
-## Setup AT environment
-Before running the scripts below, run openExample('simulink_automotive/ModelingAnAutomaticTransmissionControllerExample') in MATLAB. A window of the AT model will open.
+## Set up the environment for benchmarks
+Before running the scripts below, add paths to the directories of AT and CC to MATLAB and run `openExample('simulink_automotive/ModelingAnAutomaticTransmissionControllerExample')` in MATLAB. A window of the AT model will open.
+
+You can add paths to them by running the following commands in MATLAB.
+```matlab
+addpath('<path/to/this/repository>/FalCAuN/example/kotlin/AT')
+addpath('<path/to/this/repository>/FalCAuN/example/kotlin/CC')
+savepath
+```
 
 ## List of scripts
 |Name|Short description|Estimated execution time|
@@ -64,7 +71,7 @@ Before running the scripts below, run openExample('simulink_automotive/ModelingA
 |run-CC-selected.sh|run CC1, CC2 and CC6 3 times|1 hour|
 
 ## Reproduce the results
-First, you need to run install script to create directories for log files:
+First, you need to run the script to create directories for log files:
 ```sh
 ./install.sh
 ```
@@ -74,7 +81,7 @@ Then, you can reproduce the full results in the paper with the command:
 ./run-RERS.sh && ./run-AT-all.sh && ./run-CC-all.sh
 ```
 
-Since runnning all the benchmarks for AT and CC takes long time, you can also reproduce the results of some selected benchmarks with the command:
+Since running all the benchmarks for AT and CC takes a long time, you can also reproduce the results of some selected benchmarks with the command:
 ```sh
 ./run-AT-selected.sh && ./run-CC-selected.sh
 ```
@@ -84,13 +91,13 @@ Each benchmark in [FalCAuN/example/kotlin/AT](/FalCAuN/example/kotlin/AT) and [F
 ```sh
 ./bench_name.kts mode
 ```
-The variable mode must be one of 'original', 'partial', 'abstract' corresponding to the method NOABS, DISJSENSE, COARSEST in the paper, respectively.
+The variable mode must be one of 'original', 'partial', 'abstract', corresponding to the method NOABS, DISJSENSE, COARSEST in the paper, respectively.
 For example, you can run AT1 with COARSEST with the following command:
 ```sh
 ./AT1.kts abstract
 ```
 
 ## Run AT/CC with other specifications
-To run falsification of AT/CC models with other specifications, please refer to [Tutorial for AT benchmarks](/FalCAuN/example/kotlin/AT/tutorial.md) and change the initiallization of input/output mappers and STL properties.
+To run falsification of AT/CC models with other specifications, please refer to [Tutorial for AT benchmarks](/FalCAuN/example/kotlin/AT/tutorial.md) and change the initialization of input/output mappers and STL properties.
 
-## Description of implementaion of specification-guided abstraction
+## Description of implementation of specification-guided abstraction
