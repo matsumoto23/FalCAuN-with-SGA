@@ -20,6 +20,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
     python3-dev \
     zip \
     unzip \
+    coreutils \
     && apt-get clean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
@@ -58,7 +59,7 @@ RUN wget https://github.com/Meijuh/ltsmin/releases/download/v3.1.0/ltsmin-v3.1.0
 
 # Install 
 RUN wget https://github.com/owl-toolkit/owl/releases/download/release-21.0/owl-linux-amd64-21.0.zip \
-    && unzip owl-linux-amd64-21.0.zip /owl \
+    && unzip owl-linux-amd64-21.0.zip -d owl \
     && sudo cp -r owl /usr/lib/
 
 # Install Python and Jep
@@ -70,9 +71,12 @@ RUN source ~/.sdkman/bin/sdkman-init.sh \
 # Install FalCauN
 ENV MATLAB_HOME="/opt/matlab/${MATLAB_RELEASE}"
 RUN git clone https://github.com/matsumoto23/FalCAuN-with-SGA /home/matlab/FalCAuN-with-SGA
-WORKDIR /home/matlab/FalCAuN
+WORKDIR /home/matlab/FalCAuN-with-SGA/FalCAuN
 RUN source ~/.sdkman/bin/sdkman-init.sh \
     && mvn clean \
     && mvn install
+WORKDIR /home/matlab/FalCAuN-with-SGA
 
 RUN echo 'source ~/.sdkman/bin/sdkman-init.sh' >> ~/.bashrc
+
+ENTRYPOINT [ "/bin/bash" ]

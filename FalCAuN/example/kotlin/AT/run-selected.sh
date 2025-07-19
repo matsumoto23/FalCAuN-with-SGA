@@ -7,9 +7,9 @@ do
     for iteration in {1..3}
     do
       echo "===================================="
-      echo "$mode"_stl"$index"_iteration:"$iteration"
+      echo "$mode"_AT"$index"_iteration:"$iteration"
       echo "===================================="
-      (time (timeout 1260 ./stl$index.kts $mode)) | tee ./log/AT"$index"/"$mode"_"$iteration".txt
+      (time (timeout 1260 ./AT$index.kts $mode)) | tee ./log/AT"$index"/"$mode"_"$iteration".txt
     done
   done
 done

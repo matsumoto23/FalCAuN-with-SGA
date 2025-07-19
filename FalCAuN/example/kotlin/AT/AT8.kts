@@ -120,7 +120,6 @@ SimulinkSUL(initScript, paramNames, signalStep, simulinkSimulationStep).use { au
     println("Execution time for simulation: ${verifier.simulationTimeSecond} [sec]")
     println("Number of simulations: ${verifier.simulinkCount}")
     println("Number of simulations for equivalence testing: ${verifier.simulinkCountForEqTest}")
-    verifier.visualizeLearnedMealy()
 }
 
 val overallEnd = System.currentTimeMillis()

@@ -59,14 +59,15 @@ val stlList = listOf(
 val signalLength = 30
 val properties = AdaptiveSTLList(stlList, signalLength)
 
+// Select a method of abstraction
 var mapper : NumericSULMapper? = null
-if (args[0] == "original"){
+if (args[0] == "original"){  // NOABS
     mapper =
         NumericSULMapper(inputMapper, outputMapperReader.largest, outputMapperReader.outputMapper, signalMapper)
-} else if (args[0] == "abstract"){
+} else if (args[0] == "abstract"){  // COARSEST
     mapper = OutputEquivalence(inputMapper, outputMapperReader.largest, outputMapperReader.outputMapper, signalMapper, stlList, false)
-    properties.setMapper(mapper as OutputEquivalence)  // used for LTL abstraction
-} else if (args[0] == "partial") {
+    properties.setMapper(mapper as OutputEquivalence)
+} else if (args[0] == "partial") {  // DISJSENSE
     mapper = OutputEquivalence(inputMapper, outputMapperReader.largest, outputMapperReader.outputMapper, signalMapper, stlList, true)
     properties.setMapper(mapper as OutputEquivalence)
 }
@@ -107,7 +108,6 @@ SimulinkSUL(initScript, paramNames, signalStep, simulinkSimulationStep).use { au
             println("cex output: ${verifier.cexOutput[i]}")
         }
     }
-    verifier.visualizeLearnedMealy()
     println("Execution time for simulation: ${verifier.simulationTimeSecond} [sec]")
     println("Number of simulations: ${verifier.simulinkCount}")
     println("Number of simulations for equivalence testing: ${verifier.simulinkCountForEqTest}")

@@ -7,7 +7,7 @@ do
       echo "===================================="
       echo "$mode"_m"$index":"$iteration"
       echo "===================================="
-      (time (./mealy_falsification.kts $mode $index 9)) | tee ./log/m"$index"_"$mode"_"$iteration".txt
+      time (./mealy_falsification.kts $mode $index 9) | tee ./log/m"$index"_"$mode"_"$iteration".txt
     done
   done
 done
