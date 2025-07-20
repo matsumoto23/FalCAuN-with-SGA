@@ -20,7 +20,7 @@ END {
     } else {
       for (i = 2; i <= NF; i++) {
           if (header[i] == " num Fals.") {
-            tmp_row_count = 60
+            tmp_row_count = 3
           } else {
             tmp_row_count = row_count
           }
