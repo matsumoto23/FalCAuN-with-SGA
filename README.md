@@ -134,7 +134,7 @@ Follow the [instructions](/docker/README.md) to run benchmarks on Docker.
 
 ## Implementation of SGA
 SGA is implemented as a mapper for a system.
-[`OutputMapper`](/FalCAuN/core/src/main/java/net/maswag/falcaun/OutputMapper.java) is a class of a mapper for a Mealy machine provided as an instance of `MealySimulatorSUL`, and [`OutputEquivalence`](/FalCAuN/core/src/main/java/net/maswag/falcaun/OutputEquivalence.java) is a class of a mapper for a MATLAB/Simulink system.
+[`OutputMapper`](/FalCAuN/core/src/main/java/net/maswag/falcaun/OutputMapper.java) is a class of a mapper for a Mealy machine provided as an instance of `MealySimulatorSUL`, and [`OutputEquivalence`](/FalCAuN/core/src/main/java/net/maswag/falcaun/OutputEquivalence.java) is a class of a mapper for a MATLAB/Simulink system. In both classes, the constructor invokes either `createDELAs` or `createNBAs` to construct automata based on the given formulas, and then calls `getOutputMapper` to generate the corresponding mapper using an automata-theoretic construction of SGA.
 
 You can enable SGA by setting a suitable mapper for a system.
 - For a Mealy machine provided as an instance of `MealySimulatorSUL`, you can set a mapper by
