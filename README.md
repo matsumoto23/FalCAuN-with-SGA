@@ -13,16 +13,18 @@ The requirements for FalCAuN-with-SGA are as follows.
 - MATLAB/Simulink R2024a
 - Kotlin 1.9.24
 - kscript
+- bc
 
 ### 1. Install the requirements
 You need to install all the requirements above.
-For example, Java 11 and Maven can be installed with the following commands:
+For example, Java 11, Maven, and bc can be installed with the following commands:
 ```sh
 curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 sdk install java 11.0.27-amzn
 sdk install maven
+sudo apt-get install bc
 ```
 
 You have to manually install LTSmin, Owl, and MATLAB/Simulink.
@@ -94,6 +96,7 @@ savepath
 |run-CC-all.sh|Run all the benchmarks for CC 60 times|60 hours|
 |run-AT-selected.sh|Run AT4' and AT7 3 times|4 hours|
 |run-CC-selected.sh|Run CC1, CC2 and CC6 3 times|1 hour|
+|show-result.sh|Show the statistics of existing results||
 
 ## Reproduce the results
 First, you need to run the script to create directories for log files:

@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # run all AT benchmarks 
-# cd ./FalCAuN/example/kotlin/AT/
-# ./run-all.sh
-# cd -
+cd ./FalCAuN/example/kotlin/AT/
+./run-all.sh
+cd -
 
 convert_to_seconds() {
     local time_str=$1

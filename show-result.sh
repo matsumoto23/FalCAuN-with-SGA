@@ -15,8 +15,17 @@ NR == 1 {
     row_count++
 }
 END {
-    for (i = 2; i <= NF; i++) {
-        printf "%s average: %.2f\n", header[i], sum[i] / row_count
+    if (row_count < 1) {
+      printf "Always failed to falsify\n"
+    } else {
+      for (i = 2; i <= NF; i++) {
+          if (header[i] == " num Fals.") {
+            tmp_row_count = 60
+          } else {
+            tmp_row_count = row_count
+          }
+          printf "%s average: %.2f\n", header[i], sum[i] / tmp_row_count
+      }
     }
 }' $1
 }

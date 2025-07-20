@@ -21,6 +21,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
     zip \
     unzip \
     coreutils \
+    bc \
     && apt-get clean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
