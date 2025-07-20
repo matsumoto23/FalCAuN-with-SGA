@@ -1,7 +1,7 @@
 Docker
 ======
 
-This directory contains `Dockerfile` to run FalCAuN-with-SGA on Docker. We test this environment on Windows 11/x64.
+This directory contains `Dockerfile` to run FalCAuN-with-SGA on Docker. This environment has been tested on Windows 11/x64.
 
 How to build
 ------------
