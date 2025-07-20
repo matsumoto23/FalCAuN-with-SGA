@@ -19,7 +19,7 @@
  *   - The environment variable MATLAB_HOME is set to the root directory of MATLAB, e.g., /Applications/MATLAB_R2024a.app/ or /usr/local/MATLAB/R2024a.
  *
  *  USAGE
- *   ./CC5.main.kts
+ *   ./CC5.main.kts original|ppartial|abstract
  *
  ********/
 
@@ -32,7 +32,7 @@ import kotlin.streams.toList
 
 val overallStart = System.currentTimeMillis()
 
-logger.info("This is the script to falsify the chasing car benchmark against the CC11 formula by FalCAuN")
+logger.info("This is the script to falsify the chasing car benchmark against the CC5 formula by FalCAuN-with-SGA")
 
 // The number of repetitions of the experiment
 var experimentSize = 1
