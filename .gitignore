@@ -186,3 +186,4 @@ target/
 # Results
 .idea
 log/
+data/
