@@ -96,7 +96,7 @@ savepath
 |run-CC-all.sh|Run all the benchmarks for CC 60 times|60 hours|
 |run-AT-selected.sh|Run AT4' and AT7 3 times|4 hours|
 |run-CC-selected.sh|Run CC1, CC2 and CC6 3 times|1 hour|
-|show-result.sh|Show the statistics of existing results||
+|show-result.sh|Show the statistics of existing results|~1 min|
 
 ## Reproduce the results
 First, you need to run the script to create directories for log files:
