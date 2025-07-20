@@ -53,14 +53,3 @@ A window of the AT model will open.
 
 Finally, you can run the Kotlin scripts. Open a terminal at the bottom of the desktop. Move to the directory containing examples of FalCAuN-with-SGA with `cd /home/matlab/FalCAuN-with-SGA/example/kotlin` and run a script, e.g., `./mealy-nox.main.kts` or `./ATS1.main.kts`. Most of the example scripts assumes that the current directory of MATLAB session is the directory of the script. Therefore, you also have to run `cd /home/matlab/FalCAuN-with-SGA/FalCAuN/example/kotlin/AT` or `cd /home/matlab/FalCAuN-with-SGA/FalCAuN/example/kotlin/CC` in MATLAB.
 
-### Run on macOS
-Although this `Dockerfile` can be built and run on macOS with Apple Silicon, some trouble may occur.
-Below, we have listed possible problems to help you solve them.
-
-- When the container exits immediately after startup, try a different type of VMM.
-  - The setting on VMM can be found in `Settings > General > Virtual Machine Options` in Docker Desktop.
-- When you can not start MATLAB GUI, please try to
-  - Run MATLAB with the command `matlab -nodesktop -nosplash` in the shell where Docker is running.
-  - Then, activate the MATLAB license.
-  - Then, run `addpath('/home/matlab/FalCAuN-with-SGA/FalCAuN/example/kotlin/AT')`, `addpath('/home/matlab/FalCAuN-with-SGA/FalCAuN/example/kotlin/CC')`, and `matlab.engine.shareEngine` in MATLAB.
-  - Finally, follow the instructions to run the scripts.
