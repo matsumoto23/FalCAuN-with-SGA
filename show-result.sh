@@ -133,7 +133,7 @@ if [ $# -lt 1 ] || [ $1 == RERS ]; then
   do
     if [[ ${log} =~ ^FalCAuN/example/kotlin/RERS/log/m([0-9]+)_([a-z]+)_([0-9]+)\.txt$ ]]; then
       if [ ! -f "data/RERS/m${BASH_REMATCH[1]}.txt" ]; then
-        echo "method, # of OQ , # of EQ, Init. Time (ms), Fals. Time (ms), Total time (sec)" >> data/RERS/m${BASH_REMATCH[1]}.txt
+        echo "method, # of EQ , # of OQ, Init. Time (ms), Fals. Time (ms), Total time (sec)" >> data/RERS/m${BASH_REMATCH[1]}.txt
       fi
       num_eq=$(cat $log | grep "Starting round" | tr " " "\n" | tail -n 1) && \
       num_oq=$(cat $log | grep "# of MQ:" | tr " " "\n" | tail -n 1) && \
