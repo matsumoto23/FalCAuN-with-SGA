@@ -1,3 +1,5 @@
+#!/bin/bash
+
 mkdir ./FalCAuN/example/kotlin/AT/log/
 mkdir ./FalCAuN/example/kotlin/CC/log/
 mkdir ./FalCAuN/example/kotlin/RERS/log/
