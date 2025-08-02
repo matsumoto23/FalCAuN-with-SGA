@@ -17,7 +17,7 @@ The requirements for FalCAuN-with-SGA are as follows.
 
 ### 1. Install the requirements
 You need to install all the requirements above.
-For example, Java 11, Maven, and bc can be installed with the following commands:
+Java 11, Maven, and bc can be installed with the following commands (For details on installing the SDK, please refer to  https://sdkman.io/install/):
 ```sh
 curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
